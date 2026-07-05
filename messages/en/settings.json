@@ -1,0 +1,18 @@
+{
+  "appearance": {
+    "title": "Appearance",
+    "description": "Set the mode and accent colour used across the app. Saved to this device — try it, it changes live.",
+    "modeHeading": "Mode",
+    "accentHeading": "Accent color",
+    "active": "Active",
+    "useModeAria": "Use {mode} mode",
+    "useThemeAria": "Use {name} theme",
+    "modes": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "languageHeading": "Language",
+    "languageDescription": "Choose the language used across the interface. Saved to your account.",
+    "languageAria": "Interface language"
+  }
+}

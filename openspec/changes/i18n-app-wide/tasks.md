@@ -1,13 +1,13 @@
 ## 1. Infra de escala (base para o resto)
 
-- [ ] 1.1 Migrar `messages/en.json` e `messages/pt-BR.json` para diretórios por locale com um arquivo por módulo (`messages/<locale>/common.json`, `auth.json`, `settings.json`, etc.), preservando as chaves do piloto
-- [ ] 1.2 Ajustar `src/i18n/request.ts` para carregar e mesclar todos os arquivos de módulo do locale ativo
-- [ ] 1.3 Criar script de verificação de paridade de chaves entre locales (`scripts/i18n-parity.mjs` ou similar) e um npm script `i18n:check`
-- [ ] 1.4 Adicionar o `i18n:check` ao workflow de CI
+- [x] 1.1 Migrar `messages/en.json` e `messages/pt-BR.json` para diretórios por locale com um arquivo por módulo (`messages/<locale>/common.json`, `auth.json`, `settings.json`, etc.), preservando as chaves do piloto
+- [x] 1.2 Ajustar `src/i18n/request.ts` para carregar e mesclar todos os arquivos de módulo do locale ativo
+- [x] 1.3 Criar script de verificação de paridade de chaves entre locales (`scripts/i18n-parity.mjs` ou similar) e um npm script `i18n:check`
+- [x] 1.4 Adicionar o `i18n:check` ao workflow de CI
 
 ## 2. Formatação locale-aware
 
-- [ ] 2.1 Criar helper(s) de formatação usando `useFormatter` do next-intl para data, número e moeda (moeda a partir de `account.default_currency`, com fallback quando nulo)
+- [x] 2.1 Criar helper(s) de formatação usando `useFormatter` do next-intl para data, número e moeda (moeda a partir de `account.default_currency`, com fallback quando nulo)
 - [ ] 2.2 Substituir `toLocaleDateString`/`toLocaleString`/`Intl.NumberFormat`/`date-fns` sem locale pelos helpers nos ~30 call sites
 
 ## 3. Módulos (ordem por tráfego)

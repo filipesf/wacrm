@@ -1,0 +1,18 @@
+{
+  "appearance": {
+    "title": "Aparência",
+    "description": "Defina o modo e a cor de destaque usados em todo o app. Salvo neste dispositivo — experimente, muda na hora.",
+    "modeHeading": "Modo",
+    "accentHeading": "Cor de destaque",
+    "active": "Ativo",
+    "useModeAria": "Usar modo {mode}",
+    "useThemeAria": "Usar tema {name}",
+    "modes": {
+      "light": "Claro",
+      "dark": "Escuro"
+    },
+    "languageHeading": "Idioma",
+    "languageDescription": "Escolha o idioma usado em toda a interface. Salvo na sua conta.",
+    "languageAria": "Idioma da interface"
+  }
+}
