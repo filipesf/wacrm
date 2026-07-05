@@ -1,11 +1,13 @@
 "use client";
 
-import { Check, Moon, Palette, SunMoon, Sun } from "lucide-react";
+import { Check, Languages, Moon, Palette, SunMoon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { useTheme } from "@/hooks/use-theme";
 import { MODES, THEMES, type Mode, type ThemeId } from "@/lib/themes";
 import { cn } from "@/lib/utils";
 import { SettingsPanelHead } from "./settings-panel-head";
+import { LanguageSwitcher } from "./language-switcher";
 
 /**
  * Appearance panel — light/dark mode + accent-color picker.
@@ -21,28 +23,32 @@ import { SettingsPanelHead } from "./settings-panel-head";
  */
 export function AppearancePanel() {
   const { theme, setTheme, mode, setMode } = useTheme();
+  const t = useTranslations("settings.appearance");
   return (
     <section className="max-w-3xl animate-in fade-in-50 duration-200">
       <SettingsPanelHead
-        title="Appearance"
-        description="Set the mode and accent colour used across the app. Saved to this device — try it, it changes live."
+        title={t("title")}
+        description={t("description")}
       />
 
       <div className="space-y-4">
         <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <SunMoon className="size-4 text-muted-foreground" />
-          Mode
+          {t("modeHeading")}
         </h3>
 
         <div
           role="radiogroup"
-          aria-label="Color mode"
+          aria-label={t("modeHeading")}
           className="grid max-w-md grid-cols-2 gap-3"
         >
           {MODES.map((m) => (
             <ModeCard
               key={m}
               mode={m}
+              label={t(`modes.${m}`)}
+              activeLabel={t("active")}
+              ariaLabel={t("useModeAria", { mode: t(`modes.${m}`) })}
               isActive={m === mode}
               onPick={() => setMode(m)}
             />
@@ -53,22 +59,37 @@ export function AppearancePanel() {
       <div className="mt-8 space-y-4">
         <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
           <Palette className="size-4 text-muted-foreground" />
-          Accent color
+          {t("accentHeading")}
         </h3>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {THEMES.map((t) => (
+          {THEMES.map((th) => (
             <ThemeCard
-              key={t.id}
-              id={t.id}
-              name={t.name}
-              tagline={t.tagline}
-              swatch={t.swatch}
-              isActive={t.id === theme}
-              onPick={() => setTheme(t.id)}
+              key={th.id}
+              id={th.id}
+              name={th.name}
+              tagline={th.tagline}
+              swatch={th.swatch}
+              activeLabel={t("active")}
+              ariaLabel={t("useThemeAria", { name: th.name })}
+              isActive={th.id === theme}
+              onPick={() => setTheme(th.id)}
             />
           ))}
         </div>
+      </div>
+
+      <div className="mt-8 space-y-4">
+        <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
+          <Languages className="size-4 text-muted-foreground" />
+          {t("languageHeading")}
+        </h3>
+
+        <p className="text-sm text-muted-foreground">
+          {t("languageDescription")}
+        </p>
+
+        <LanguageSwitcher />
       </div>
     </section>
   );
@@ -76,10 +97,16 @@ export function AppearancePanel() {
 
 function ModeCard({
   mode,
+  label,
+  activeLabel,
+  ariaLabel,
   isActive,
   onPick,
 }: {
   mode: Mode;
+  label: string;
+  activeLabel: string;
+  ariaLabel: string;
   isActive: boolean;
   onPick: () => void;
 }) {
@@ -91,7 +118,7 @@ function ModeCard({
       role="radio"
       onClick={onPick}
       aria-checked={isActive}
-      aria-label={`Use ${mode} mode`}
+      aria-label={ariaLabel}
       className={cn(
         "flex items-center gap-3 rounded-lg border bg-card p-4 text-left transition-colors",
         isActive
@@ -105,13 +132,13 @@ function ModeCard({
       >
         <Icon className="h-4 w-4" />
       </span>
-      <span className="flex-1 text-sm font-semibold capitalize text-foreground">
-        {mode}
+      <span className="flex-1 text-sm font-semibold text-foreground">
+        {label}
       </span>
       {isActive && (
         <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2 py-0.5 text-[11px] font-medium text-primary">
           <Check className="h-3 w-3" />
-          Active
+          {activeLabel}
         </span>
       )}
     </button>
@@ -123,6 +150,8 @@ function ThemeCard({
   name,
   tagline,
   swatch,
+  activeLabel,
+  ariaLabel,
   isActive,
   onPick,
 }: {
@@ -130,6 +159,8 @@ function ThemeCard({
   name: string;
   tagline: string;
   swatch: string;
+  activeLabel: string;
+  ariaLabel: string;
   isActive: boolean;
   onPick: () => void;
 }) {
@@ -138,7 +169,7 @@ function ThemeCard({
       type="button"
       onClick={onPick}
       aria-pressed={isActive}
-      aria-label={`Use ${name} theme`}
+      aria-label={ariaLabel}
       className={cn(
         "flex flex-col gap-3 rounded-lg border bg-card p-4 text-left transition-colors",
         isActive
@@ -158,7 +189,7 @@ function ThemeCard({
         {isActive && (
           <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2 py-0.5 text-[11px] font-medium text-primary">
             <Check className="h-3 w-3" />
-            Active
+            {activeLabel}
           </span>
         )}
       </div>

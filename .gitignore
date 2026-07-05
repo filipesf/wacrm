@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# supabase CLI local link state (project-ref, pooler url) — not for the repo
+supabase/.temp/
+
+# claude code runtime lock
+.claude/scheduled_tasks.lock
