@@ -20,5 +20,8 @@ export default getRequestConfig(async () => {
     })
   )
 
-  return { locale, messages: Object.fromEntries(entries) }
+  // Provide a request-time `now` so `useFormatter().relativeTime(value)`
+  // has a global reference point and doesn't warn (ENVIRONMENT_FALLBACK)
+  // when called without an explicit `now` argument.
+  return { locale, messages: Object.fromEntries(entries), now: new Date() }
 })
