@@ -118,5 +118,9 @@
     "stageDeleteFailed": "Não foi possível excluir a etapa",
     "pipelineDeleteFailed": "Não foi possível excluir o funil",
     "pipelineDeleted": "Funil excluído"
+  },
+  "gate": {
+    "createPipeline": "criar funis",
+    "createDeal": "criar negócios"
   }
 }

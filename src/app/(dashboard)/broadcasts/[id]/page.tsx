@@ -269,6 +269,9 @@ export default function BroadcastDetailPage() {
   }
 
   const status = getBroadcastStatus(broadcast.status);
+  const statusLabel = t.has(`statusLabels.${broadcast.status}`)
+    ? t(`statusLabels.${broadcast.status}`)
+    : status.label;
 
   const funnelSteps: FunnelStep[] = [
     { label: t('detail.funnel.sent'), value: broadcast.sent_count, color: 'bg-primary' },
@@ -296,7 +299,7 @@ export default function BroadcastDetailPage() {
               <span
                 className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${status.classes}`}
               >
-                {status.label}
+                {statusLabel}
               </span>
             </div>
             <div className="mt-1 flex items-center gap-3 text-sm text-muted-foreground">
@@ -428,7 +431,9 @@ export default function BroadcastDetailPage() {
                 <Filter className="h-3.5 w-3.5" />
                 {statusFilter === 'all'
                   ? t('detail.recipients.allStatuses')
-                  : getRecipientStatus(statusFilter).label}
+                  : t.has(`recipientStatusLabels.${statusFilter}`)
+                    ? t(`recipientStatusLabels.${statusFilter}`)
+                    : getRecipientStatus(statusFilter).label}
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="border-border bg-popover">
@@ -450,7 +455,9 @@ export default function BroadcastDetailPage() {
                         : 'text-popover-foreground'
                     }
                   >
-                    {getRecipientStatus(s).label}
+                    {t.has(`recipientStatusLabels.${s}`)
+                      ? t(`recipientStatusLabels.${s}`)
+                      : getRecipientStatus(s).label}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -494,6 +501,11 @@ export default function BroadcastDetailPage() {
               <TableBody>
                 {filteredRecipients.map((recipient) => {
                   const rStatus = getRecipientStatus(recipient.status);
+                  const rStatusLabel = t.has(
+                    `recipientStatusLabels.${recipient.status}`,
+                  )
+                    ? t(`recipientStatusLabels.${recipient.status}`)
+                    : rStatus.label;
                   return (
                     <TableRow key={recipient.id} className="border-border">
                       <TableCell className="font-medium text-foreground">
@@ -506,7 +518,7 @@ export default function BroadcastDetailPage() {
                         <span
                           className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${rStatus.classes}`}
                         >
-                          {rStatus.label}
+                          {rStatusLabel}
                         </span>
                       </TableCell>
                       <TableCell className="text-muted-foreground">

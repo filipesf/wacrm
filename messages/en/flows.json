@@ -10,16 +10,46 @@
     "flow": "Flow control"
   },
   "nodes": {
-    "start": { "label": "Start", "blurb": "Entry point of the flow" },
-    "send_message": { "label": "Send message", "blurb": "Sends a WhatsApp text message" },
-    "send_buttons": { "label": "Send buttons", "blurb": "Sends quick-reply buttons" },
-    "send_list": { "label": "Send list", "blurb": "Sends a tappable list of options" },
-    "send_media": { "label": "Send media", "blurb": "Sends an image, video, or document" },
-    "collect_input": { "label": "Collect input", "blurb": "Asks a question, saves the reply" },
-    "condition": { "label": "If / else", "blurb": "Branches on a rule" },
-    "set_tag": { "label": "Tag contact", "blurb": "Adds or removes a contact tag" },
-    "handoff": { "label": "Handoff to agent", "blurb": "Hands the conversation to a human" },
-    "end": { "label": "End", "blurb": "Ends the flow" }
+    "start": {
+      "label": "Start",
+      "blurb": "Entry point of the flow"
+    },
+    "send_message": {
+      "label": "Send message",
+      "blurb": "Sends a WhatsApp text message"
+    },
+    "send_buttons": {
+      "label": "Send buttons",
+      "blurb": "Sends quick-reply buttons"
+    },
+    "send_list": {
+      "label": "Send list",
+      "blurb": "Sends a tappable list of options"
+    },
+    "send_media": {
+      "label": "Send media",
+      "blurb": "Sends an image, video, or document"
+    },
+    "collect_input": {
+      "label": "Collect input",
+      "blurb": "Asks a question, saves the reply"
+    },
+    "condition": {
+      "label": "If / else",
+      "blurb": "Branches on a rule"
+    },
+    "set_tag": {
+      "label": "Tag contact",
+      "blurb": "Adds or removes a contact tag"
+    },
+    "handoff": {
+      "label": "Handoff to agent",
+      "blurb": "Hands the conversation to a human"
+    },
+    "end": {
+      "label": "End",
+      "blurb": "Ends the flow"
+    }
   },
   "summary": {
     "options": "{count, plural, one {# option} other {# options}}",
@@ -262,5 +292,8 @@
     "reprompts": "{count, plural, one {# re-prompt} other {# re-prompts}}",
     "capturedVars": "Captured vars ({count})",
     "noEvents": "No events recorded for this run."
+  },
+  "gate": {
+    "create": "create flows"
   }
 }

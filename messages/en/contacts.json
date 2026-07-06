@@ -191,5 +191,9 @@
       "failedToImport": "{count, plural, one {# contact failed to import} other {# contacts failed to import}}",
       "importFailed": "Import failed"
     }
+  },
+  "gate": {
+    "addOrImport": "add or import contacts",
+    "delete": "delete contacts"
   }
 }

@@ -118,5 +118,9 @@
     "stageDeleteFailed": "Failed to delete stage",
     "pipelineDeleteFailed": "Failed to delete pipeline",
     "pipelineDeleted": "Pipeline deleted"
+  },
+  "gate": {
+    "createPipeline": "create pipelines",
+    "createDeal": "create deals"
   }
 }

@@ -190,7 +190,7 @@ export default function BroadcastsPage() {
         </div>
         <GatedButton
           canAct={canCreate}
-          gateReason="create broadcasts"
+          gateReason={t('gate.create')}
           onClick={() => router.push('/broadcasts/new')}
           className="bg-primary text-primary-foreground hover:bg-primary/90"
         >
@@ -208,7 +208,7 @@ export default function BroadcastsPage() {
           </p>
           <GatedButton
             canAct={canCreate}
-            gateReason="create broadcasts"
+            gateReason={t('gate.create')}
             onClick={() => router.push('/broadcasts/new')}
             className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
           >
@@ -235,6 +235,9 @@ export default function BroadcastsPage() {
             <TableBody>
               {broadcasts.map((broadcast) => {
                 const status = getBroadcastStatus(broadcast.status);
+                const statusLabel = t.has(`statusLabels.${broadcast.status}`)
+                  ? t(`statusLabels.${broadcast.status}`)
+                  : status.label;
                 return (
                   <TableRow
                     key={broadcast.id}
@@ -274,7 +277,7 @@ export default function BroadcastsPage() {
                             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-yellow-400" />
                           </span>
                         )}
-                        {status.label}
+                        {statusLabel}
                       </span>
                     </TableCell>
                     <TableCell className="hidden text-muted-foreground sm:table-cell">

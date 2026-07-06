@@ -535,7 +535,9 @@ export function TemplateManager() {
                         {t(`categories.${template.category}`)}
                       </Badge>
                       <Badge className={`text-xs border ${status.classes}`}>
-                        {status.label}
+                        {t.has(`statusLabels.${statusKey}`)
+                          ? t(`statusLabels.${statusKey}`)
+                          : status.label}
                       </Badge>
                       {template.language && (
                         <span className="text-xs text-muted-foreground uppercase">

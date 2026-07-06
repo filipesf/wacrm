@@ -10,16 +10,46 @@
     "flow": "Controle de fluxo"
   },
   "nodes": {
-    "start": { "label": "Início", "blurb": "Ponto de entrada do fluxo" },
-    "send_message": { "label": "Enviar mensagem", "blurb": "Envia uma mensagem de texto no WhatsApp" },
-    "send_buttons": { "label": "Enviar botões", "blurb": "Envia botões de resposta rápida" },
-    "send_list": { "label": "Enviar lista", "blurb": "Envia uma lista de opções para tocar" },
-    "send_media": { "label": "Enviar mídia", "blurb": "Envia uma imagem, vídeo ou documento" },
-    "collect_input": { "label": "Coletar resposta", "blurb": "Faz uma pergunta e salva a resposta" },
-    "condition": { "label": "Se / senão", "blurb": "Ramifica com base em uma regra" },
-    "set_tag": { "label": "Marcar contato", "blurb": "Adiciona ou remove uma tag do contato" },
-    "handoff": { "label": "Transferir para agente", "blurb": "Transfere a conversa para um humano" },
-    "end": { "label": "Fim", "blurb": "Encerra o fluxo" }
+    "start": {
+      "label": "Início",
+      "blurb": "Ponto de entrada do fluxo"
+    },
+    "send_message": {
+      "label": "Enviar mensagem",
+      "blurb": "Envia uma mensagem de texto no WhatsApp"
+    },
+    "send_buttons": {
+      "label": "Enviar botões",
+      "blurb": "Envia botões de resposta rápida"
+    },
+    "send_list": {
+      "label": "Enviar lista",
+      "blurb": "Envia uma lista de opções para tocar"
+    },
+    "send_media": {
+      "label": "Enviar mídia",
+      "blurb": "Envia uma imagem, vídeo ou documento"
+    },
+    "collect_input": {
+      "label": "Coletar resposta",
+      "blurb": "Faz uma pergunta e salva a resposta"
+    },
+    "condition": {
+      "label": "Se / senão",
+      "blurb": "Ramifica com base em uma regra"
+    },
+    "set_tag": {
+      "label": "Marcar contato",
+      "blurb": "Adiciona ou remove uma tag do contato"
+    },
+    "handoff": {
+      "label": "Transferir para agente",
+      "blurb": "Transfere a conversa para um humano"
+    },
+    "end": {
+      "label": "Fim",
+      "blurb": "Encerra o fluxo"
+    }
   },
   "summary": {
     "options": "{count, plural, one {# opção} other {# opções}}",
@@ -262,5 +292,8 @@
     "reprompts": "{count, plural, one {# reenvio} other {# reenvios}}",
     "capturedVars": "Variáveis capturadas ({count})",
     "noEvents": "Nenhum evento registrado para esta execução."
+  },
+  "gate": {
+    "create": "criar fluxos"
   }
 }

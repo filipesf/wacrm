@@ -236,5 +236,23 @@
       "repliedAt": "Replied At",
       "error": "Error"
     }
+  },
+  "gate": {
+    "create": "create broadcasts"
+  },
+  "statusLabels": {
+    "draft": "Draft",
+    "scheduled": "Scheduled",
+    "sending": "Sending",
+    "sent": "Sent",
+    "failed": "Failed"
+  },
+  "recipientStatusLabels": {
+    "pending": "Pending",
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "read": "Read",
+    "replied": "Replied",
+    "failed": "Failed"
   }
 }

@@ -191,5 +191,9 @@
       "failedToImport": "{count, plural, one {# contato não pôde ser importado} other {# contatos não puderam ser importados}}",
       "importFailed": "Falha na importação"
     }
+  },
+  "gate": {
+    "addOrImport": "adicionar ou importar contatos",
+    "delete": "excluir contatos"
   }
 }

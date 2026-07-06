@@ -494,6 +494,14 @@
     "deleteDescMeta": "\"{name}\" será excluído da Meta e do wacrm. Transmissões ativas que usam este modelo começarão a falhar no próximo envio. Isso não pode ser desfeito.",
     "deleteDescLocal": "\"{name}\" será excluído do wacrm. Ele nunca foi enviado à Meta, então nenhuma limpeza remota é necessária.",
     "delete": "Excluir",
-    "deleting": "Excluindo…"
+    "deleting": "Excluindo…",
+    "statusLabels": {
+      "DRAFT": "Rascunho",
+      "PENDING": "Pendente",
+      "APPROVED": "Aprovado",
+      "REJECTED": "Rejeitado",
+      "PAUSED": "Pausado",
+      "DISABLED": "Desativado"
+    }
   }
 }

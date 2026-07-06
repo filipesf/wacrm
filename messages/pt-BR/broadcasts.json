@@ -236,5 +236,23 @@
       "repliedAt": "Respondida em",
       "error": "Erro"
     }
+  },
+  "gate": {
+    "create": "criar transmissões"
+  },
+  "statusLabels": {
+    "draft": "Rascunho",
+    "scheduled": "Agendada",
+    "sending": "Enviando",
+    "sent": "Enviada",
+    "failed": "Falhou"
+  },
+  "recipientStatusLabels": {
+    "pending": "Pendente",
+    "sent": "Enviada",
+    "delivered": "Entregue",
+    "read": "Lida",
+    "replied": "Respondeu",
+    "failed": "Falhou"
   }
 }

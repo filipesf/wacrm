@@ -29,12 +29,22 @@
 - [x] 4.2 Converter os 26 toasts com interpolação para chaves ICU (plural/variáveis)
 - [x] 4.3 Traduzir os fallbacks dos 12 toasts passthrough (mantendo o detalhe cru do servidor)
 - [x] 4.4 Sweep de `placeholder`, `aria-label` e estados vazios remanescentes
-- [ ] 4.5 Extrair a cópia embutida dos componentes `ui/` que a contêm (empty states, confirmações), deixando primitivos sem texto
+- [x] 4.5 Extrair a cópia embutida dos componentes `ui/` que a contêm (empty states, confirmações), deixando primitivos sem texto
 
 ## 5. Validação
 
-- [ ] 5.1 Rodar `npm run i18n:check` (paridade) e resolver divergências
-- [ ] 5.2 Rodar `npm run typecheck` e corrigir tipos
-- [ ] 5.3 Rodar `npm run build` (compatibilidade Turbopack/Next 16)
-- [ ] 5.4 Smoke no navegador por módulo em `en` e `pt-BR` (incluindo datas/moeda formatadas)
-- [ ] 5.5 Confirmar que `/api/v1` e dados do usuário permanecem sem tradução
+- [x] 5.1 Rodar `npm run i18n:check` (paridade) e resolver divergências
+- [x] 5.2 Rodar `npm run typecheck` e corrigir tipos
+- [x] 5.3 Rodar `npm run build` (compatibilidade Turbopack/Next 16)
+- [~] 5.4 Smoke no navegador por módulo em `en` e `pt-BR` (incluindo datas/moeda formatadas) (auth pages + login smoke em en/pt-BR OK; módulos autenticados validados via build+typecheck — smoke manual pendente por falta de conta de teste)
+- [x] 5.5 Confirmar que `/api/v1` e dados do usuário permanecem sem tradução
+
+## Gaps residuais (libs compartilhadas — follow-up)
+
+Strings de baixa visibilidade ainda em inglês, vindas de libs compartilhadas que precisam de refactor próprio (retornar chave em vez de label):
+- `src/lib/api-keys/scopes` — `SCOPE_DESCRIPTIONS` (descrições dos escopos de API key)
+- `src/lib/presence` — `presenceLabel` (tooltip/aria de presença)
+- `src/lib/currency` — nomes das moedas em `CURRENCIES` (dropdown do seletor)
+- `src/lib/flows/*` — mensagens de validação e labels de aresta/slot do editor de fluxo
+
+Já resolvidos no sweep: `GatedButton` (tooltip "somente leitura"), `broadcast-status` e `template-status` (chips de status).

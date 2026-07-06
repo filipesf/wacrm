@@ -154,5 +154,8 @@
   },
   "page": {
     "whatsappNotConnected": "O WhatsApp® não está conectado. Vá para Configurações para conectar sua conta."
+  },
+  "gate": {
+    "send": "enviar mensagens"
   }
 }
