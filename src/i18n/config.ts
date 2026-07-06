@@ -28,3 +28,22 @@ export const LOCALE_LABELS: Record<Locale, string> = {
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value)
 }
+
+// Message catalogue namespaces — one JSON file per entry under
+// messages/<locale>/<namespace>.json. Adding a module = add its file
+// for every locale and list it here. Kept explicit (not a dir scan)
+// so the bundler can resolve the imports statically.
+export const NAMESPACES = [
+  'common',
+  'auth',
+  'settings',
+  'inbox',
+  'contacts',
+  'dashboard',
+  'pipelines',
+  'broadcasts',
+  'automations',
+  'flows',
+  'notifications',
+  'layout',
+] as const

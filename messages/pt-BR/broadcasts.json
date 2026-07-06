@@ -1,0 +1,258 @@
+{
+  "list": {
+    "title": "Transmissões",
+    "subtitle": "Envie mensagens em massa para seus contatos usando modelos aprovados.",
+    "new": "Nova transmissão",
+    "loadError": "Falha ao carregar transmissões",
+    "retry": "Tentar novamente",
+    "progressAria": "Transmissão em andamento",
+    "empty": {
+      "title": "Nenhuma transmissão ainda",
+      "description": "Crie sua primeira transmissão para alcançar seus contatos em escala."
+    },
+    "columns": {
+      "name": "Nome",
+      "template": "Modelo",
+      "recipients": "Destinatários",
+      "delivery": "Entrega",
+      "read": "Leitura",
+      "status": "Status",
+      "date": "Data"
+    }
+  },
+  "wizard": {
+    "title": "Nova transmissão",
+    "subtitle": "Crie e envie uma mensagem de transmissão para seus contatos.",
+    "steps": {
+      "template": "Modelo",
+      "audience": "Público",
+      "personalize": "Personalizar",
+      "send": "Enviar"
+    },
+    "toast": {
+      "failed": "Falha na transmissão",
+      "nameRequired": "Dê um nome à transmissão antes de salvar um rascunho.",
+      "notSignedIn": "Você não está autenticado.",
+      "noAccount": "Seu perfil não está vinculado a uma conta.",
+      "draftError": "Falha ao salvar rascunho: {message}",
+      "draftSaved": "Rascunho salvo"
+    }
+  },
+  "step1": {
+    "title": "Escolha um modelo",
+    "subtitle": "Selecione um modelo de mensagem aprovado para sua transmissão.",
+    "loadError": "Falha ao carregar modelos",
+    "empty": {
+      "title": "Nenhum modelo disponível.",
+      "description": "Crie um modelo em Configurações primeiro."
+    },
+    "back": "Voltar",
+    "next": "Próximo"
+  },
+  "step2": {
+    "title": "Selecione o público",
+    "subtitle": "Escolha quem receberá esta transmissão.",
+    "options": {
+      "all": {
+        "label": "Todos os contatos",
+        "description": "Enviar para todos os contatos da sua base"
+      },
+      "tags": {
+        "label": "Filtrar por tags",
+        "description": "Segmentar contatos com tags específicas"
+      },
+      "customField": {
+        "label": "Campo personalizado",
+        "description": "Filtrar por valor de um campo personalizado"
+      },
+      "csv": {
+        "label": "Enviar CSV",
+        "description": "Envie uma lista de números de telefone"
+      }
+    },
+    "operators": {
+      "is": "é",
+      "isNot": "não é",
+      "contains": "contém"
+    },
+    "tags": {
+      "title": "Selecione as tags",
+      "empty": "Nenhuma tag encontrada. Crie tags em Configurações."
+    },
+    "customField": {
+      "title": "Filtro de campo personalizado",
+      "empty": "Nenhum campo personalizado definido. Crie um em Configurações → Campos personalizados.",
+      "selectField": "Selecione o campo…",
+      "valuePlaceholder": "Valor"
+    },
+    "exclude": {
+      "title": "Excluir contatos com estas tags",
+      "optional": "(opcional)",
+      "empty": "Nenhuma tag disponível."
+    },
+    "summary": {
+      "title": "Resumo do público",
+      "calculating": "Calculando…",
+      "estimated": "destinatários estimados",
+      "hint": "Selecione um tipo de público para ver a estimativa."
+    },
+    "back": "Voltar",
+    "next": "Próximo"
+  },
+  "step3": {
+    "title": "Personalizar mensagem",
+    "subtitle": "Mapeie as variáveis do modelo para campos de contato, campos personalizados ou valores estáticos.",
+    "header": {
+      "title": "Mídia do cabeçalho",
+      "types": {
+        "image": "imagem",
+        "video": "vídeo",
+        "document": "documento"
+      },
+      "urlLabel": "URL da mídia",
+      "urlPlaceholder": "https://example.com/header.{ext}",
+      "description": "URL pública da mídia enviada como cabeçalho da mensagem. Vale para todos os destinatários desta transmissão.",
+      "previewAlt": "Prévia do cabeçalho",
+      "errorMissing": "É obrigatório informar uma URL de mídia para enviar este modelo.",
+      "errorInvalid": "Informe uma URL http(s) válida."
+    },
+    "noVariables": "Este modelo não tem variáveis para personalizar.",
+    "mappingType": "Tipo de mapeamento",
+    "valueLabel": "Valor",
+    "fieldLabel": "Campo",
+    "mapping": {
+      "static": "Valor estático",
+      "field": "Campo de contato",
+      "customField": "Campo personalizado"
+    },
+    "valuePlaceholder": "Digite o valor...",
+    "selectField": "Selecione o campo...",
+    "loading": "Carregando…",
+    "noCustomFields": "Nenhum campo personalizado",
+    "selectCustomField": "Selecione o campo personalizado…",
+    "contactFields": {
+      "name": "Nome do contato",
+      "phone": "Número de telefone",
+      "email": "Endereço de e-mail",
+      "company": "Empresa"
+    },
+    "preview": {
+      "title": "Prévia ao vivo",
+      "sampleData": "dados de exemplo"
+    },
+    "unmapped": {
+      "prefix": "Mapeie todos os marcadores antes de continuar — ainda faltam ",
+      "suffix": ". Caso contrário, esses marcadores serão enviados à Meta como textos vazios."
+    },
+    "back": "Voltar",
+    "next": "Próximo"
+  },
+  "step4": {
+    "title": "Revisar e enviar",
+    "subtitle": "Nomeie sua transmissão, revise os detalhes e envie.",
+    "nameLabel": "Nome da transmissão",
+    "namePlaceholder": "ex.: Anúncio de promoção de verão",
+    "summary": {
+      "title": "Resumo",
+      "template": "Modelo",
+      "audience": "Público",
+      "reach": "Alcance estimado",
+      "language": "Idioma"
+    },
+    "audienceLabel": {
+      "all": "Todos os contatos",
+      "tags": "Tags ({count} selecionadas)",
+      "csv": "Envio de CSV",
+      "custom": "Personalizado"
+    },
+    "sending": "Enviando transmissão...",
+    "saveDraft": "Salvar como rascunho",
+    "send": "Enviar transmissão",
+    "back": "Voltar",
+    "confirm": {
+      "title": "Confirmar transmissão",
+      "description": "Você está prestes a enviar esta transmissão para <strong>{count, number}</strong> {count, plural, one {contato} other {contatos}} usando o modelo <strong>{name}</strong>. Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "send": "Confirmar e enviar"
+    }
+  },
+  "detail": {
+    "loadError": "Falha ao carregar transmissão",
+    "notFound": "Transmissão não encontrada",
+    "back": "Voltar para transmissões",
+    "templateLabel": "Modelo: {name}",
+    "created": "Criada em {date}",
+    "delete": {
+      "action": "Excluir",
+      "confirm": "Excluir esta transmissão?",
+      "cancel": "Cancelar",
+      "confirmButton": "Confirmar",
+      "deleting": "Excluindo…",
+      "tooltipDisabled": "Não é possível excluir enquanto uma transmissão está sendo enviada",
+      "tooltip": "Excluir esta transmissão",
+      "success": "Transmissão excluída",
+      "error": "Falha ao excluir: {message}"
+    },
+    "stats": {
+      "total": "Total de destinatários",
+      "sent": "Enviadas",
+      "delivered": "Entregues",
+      "read": "Lidas",
+      "replied": "Respondidas",
+      "failed": "Falhas"
+    },
+    "funnel": {
+      "title": "Funil",
+      "sent": "Enviadas",
+      "delivered": "Entregues",
+      "read": "Lidas",
+      "replied": "Respondidas"
+    },
+    "recipients": {
+      "heading": "Destinatários ({count})",
+      "headingFiltered": "Destinatários ({count} de {total})",
+      "allStatuses": "Todos os status",
+      "exportCsv": "Exportar CSV",
+      "emptyNone": "Nenhum destinatário encontrado.",
+      "emptyFilter": "Nenhum destinatário corresponde a este filtro.",
+      "columns": {
+        "contact": "Contato",
+        "phone": "Telefone",
+        "status": "Status",
+        "sent": "Enviada",
+        "delivered": "Entregue",
+        "read": "Lida",
+        "error": "Erro"
+      },
+      "unknown": "Desconhecido"
+    },
+    "csv": {
+      "contact": "Contato",
+      "phone": "Telefone",
+      "status": "Status",
+      "sentAt": "Enviada em",
+      "deliveredAt": "Entregue em",
+      "readAt": "Lida em",
+      "repliedAt": "Respondida em",
+      "error": "Erro"
+    }
+  },
+  "gate": {
+    "create": "criar transmissões"
+  },
+  "statusLabels": {
+    "draft": "Rascunho",
+    "scheduled": "Agendada",
+    "sending": "Enviando",
+    "sent": "Enviada",
+    "failed": "Falhou"
+  },
+  "recipientStatusLabels": {
+    "pending": "Pendente",
+    "sent": "Enviada",
+    "delivered": "Entregue",
+    "read": "Lida",
+    "replied": "Respondeu",
+    "failed": "Falhou"
+  }
+}

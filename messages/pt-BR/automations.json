@@ -1,0 +1,241 @@
+{
+  "list": {
+    "title": "Automações",
+    "subtitle": "Crie fluxos que reagem automaticamente a eventos do WhatsApp®.",
+    "createButton": "Criar automação",
+    "createGateReason": "criar automações",
+    "quickStartHeading": "Modelos de início rápido",
+    "emptyTitle": "Nenhuma automação ainda",
+    "emptyDescription": "Escolha um modelo acima ou crie uma do zero.",
+    "loadError": "Falha ao carregar as automações",
+    "retry": "Tentar novamente",
+    "activeIndicator": "ativa",
+    "runs": "{count, plural, one {# execução} other {# execuções}}",
+    "lastRun": "última execução {time}",
+    "lastNever": "nunca executada",
+    "menu": {
+      "open": "Abrir menu",
+      "edit": "Editar",
+      "duplicate": "Duplicar",
+      "viewLogs": "Ver logs",
+      "delete": "Excluir"
+    },
+    "switch": {
+      "activate": "Ativar",
+      "deactivate": "Desativar"
+    },
+    "deleteDialog": {
+      "title": "Excluir automação",
+      "body": "Isso remove permanentemente <name></name> e seu histórico de execução. Não é possível desfazer.",
+      "cancel": "Cancelar",
+      "confirm": "Excluir"
+    },
+    "toast": {
+      "activated": "Automação ativada",
+      "paused": "Automação pausada",
+      "updateFailed": "Falha ao atualizar",
+      "duplicated": "Automação duplicada",
+      "duplicateFailed": "Falha ao duplicar",
+      "deleted": "Automação excluída",
+      "deleteFailed": "Falha ao excluir"
+    }
+  },
+  "templates": {
+    "welcome_message": {
+      "name": "Mensagem de boas-vindas",
+      "description": "Responde automaticamente a novos contatos com uma saudação."
+    },
+    "out_of_office": {
+      "name": "Fora do expediente",
+      "description": "Responde automaticamente fora do horário para ninguém ficar esperando."
+    },
+    "lead_qualifier": {
+      "name": "Qualificação de leads",
+      "description": "Faz perguntas de qualificação para filtrar leads recebidos."
+    },
+    "follow_up_reminder": {
+      "name": "Lembrete de acompanhamento",
+      "description": "Envia um lembrete se um contato não responder em 24 horas."
+    }
+  },
+  "triggers": {
+    "new_message_received": "Nova mensagem",
+    "first_inbound_message": "Primeira mensagem do contato",
+    "keyword_match": "Correspondência de palavra-chave",
+    "new_contact_created": "Novo contato",
+    "conversation_assigned": "Conversa atribuída",
+    "tag_added": "Tag adicionada",
+    "time_based": "Baseado em tempo"
+  },
+  "steps": {
+    "send_message": "Enviar mensagem",
+    "send_template": "Enviar modelo",
+    "add_tag": "Adicionar tag",
+    "remove_tag": "Remover tag",
+    "assign_conversation": "Atribuir conversa",
+    "update_contact_field": "Atualizar campo do contato",
+    "create_deal": "Criar negócio",
+    "wait": "Espera",
+    "condition": "Condição (Se/Senão)",
+    "send_webhook": "Enviar webhook",
+    "close_conversation": "Fechar conversa"
+  },
+  "builder": {
+    "backAria": "Voltar para automações",
+    "backToList": "Voltar para automações",
+    "loadError": "Falha ao carregar ({status})",
+    "namePlaceholder": "Automação sem título",
+    "untitled": "Automação sem título",
+    "active": "Ativa",
+    "save": "Salvar",
+    "saveDraft": "Salvar rascunho",
+    "toast": {
+      "saved": "Automação salva",
+      "created": "Automação criada",
+      "saveFailed": "Falha ao salvar",
+      "issueAt": "em {path}"
+    },
+    "trigger": {
+      "eyebrow": "Gatilho",
+      "typeLabel": "Tipo de gatilho",
+      "tagLabel": "Tag",
+      "schedulePlaceholder": "Expressão cron ou HH:mm",
+      "keywordsLabel": "Palavras-chave (separadas por vírgula)",
+      "keywordsPlaceholder": "ex.: preço, pedir demo, falar com vendas",
+      "matchTypeLabel": "Tipo de correspondência",
+      "matchType": {
+        "contains": "Contém",
+        "exact": "Exata"
+      }
+    },
+    "triggerOptions": {
+      "new_message_received": {
+        "label": "Nova mensagem recebida",
+        "hint": "Qualquer mensagem recebida"
+      },
+      "first_inbound_message": {
+        "label": "Primeira mensagem do contato",
+        "hint": "Primeira vez que este contato envia uma mensagem (funciona também para contatos adicionados manualmente)"
+      },
+      "keyword_match": {
+        "label": "Correspondência de palavra-chave",
+        "hint": "A mensagem contém palavra(s)-chave específica(s)"
+      },
+      "new_contact_created": {
+        "label": "Novo contato criado",
+        "hint": "Quando um contato é criado automaticamente a partir de uma mensagem recebida"
+      },
+      "conversation_assigned": {
+        "label": "Conversa atribuída",
+        "hint": "Quando atribuída a um agente"
+      },
+      "tag_added": {
+        "label": "Tag adicionada",
+        "hint": "Quando uma tag é adicionada a um contato"
+      },
+      "time_based": {
+        "label": "Baseado em tempo",
+        "hint": "Em uma programação recorrente"
+      }
+    },
+    "stepKinds": {
+      "condition": "Condição",
+      "wait": "Espera",
+      "action": "Ação"
+    },
+    "branch": {
+      "yes": "Sim",
+      "no": "Não"
+    },
+    "addStep": "Adicionar etapa",
+    "moveUp": "Mover para cima",
+    "moveDown": "Mover para baixo",
+    "delete": "Excluir",
+    "preview": {
+      "noText": "sem texto ainda",
+      "pickTemplate": "escolha um modelo",
+      "noUrl": "sem url",
+      "wait": "{amount} {unit}",
+      "condition": "quando {subject}"
+    },
+    "fields": {
+      "messageText": "Texto da mensagem",
+      "messageTextPlaceholder": "Oi! Obrigado por entrar em contato…",
+      "templateName": "Nome do modelo",
+      "language": "Idioma",
+      "template": "Modelo",
+      "selectTemplate": "Selecione um modelo…",
+      "templateNotApproved": "{name} ({language}) — fora da lista de aprovados",
+      "templateUnknownLang": "desconhecido",
+      "tag": "Tag",
+      "tagIdPlaceholder": "ID da tag",
+      "selectTag": "Selecione uma tag…",
+      "unknownTag": "{value} (tag desconhecida)",
+      "mode": "Modo",
+      "modeRoundRobin": "Rodízio",
+      "modeSpecific": "Agente específico",
+      "agent": "Agente",
+      "agentIdPlaceholder": "ID do agente",
+      "selectAgent": "Selecione um agente…",
+      "unknownAgent": "{value} (agente desconhecido)",
+      "field": "Campo",
+      "fieldName": "Nome",
+      "fieldEmail": "E-mail",
+      "fieldCompany": "Empresa",
+      "customFields": "Campos personalizados",
+      "unknownField": "{value} (campo desconhecido)",
+      "value": "Valor",
+      "valuePlaceholder": "Texto ou {sample}",
+      "pipelineId": "ID do funil",
+      "stageId": "ID da etapa",
+      "pipeline": "Funil",
+      "stage": "Etapa",
+      "selectPipeline": "Selecione um funil…",
+      "selectStage": "Selecione uma etapa…",
+      "selectPipelineFirst": "Selecione um funil primeiro…",
+      "unknownPipeline": "{value} (funil desconhecido)",
+      "unknownStage": "{value} (etapa desconhecida)",
+      "title": "Título",
+      "amount": "Quantidade",
+      "unit": "Unidade",
+      "webhookUrl": "URL",
+      "bodyTemplate": "Modelo do corpo (JSON)",
+      "closeConversationNote": "Define o status da conversa como \"fechada\". Nenhuma configuração necessária."
+    },
+    "units": {
+      "minutes": "Minutos",
+      "hours": "Horas",
+      "days": "Dias"
+    },
+    "condition": {
+      "subject": "Assunto",
+      "subjects": {
+        "tag_presence": "Presença de tag",
+        "contact_field": "Campo do contato",
+        "message_content": "Conteúdo da mensagem",
+        "time_of_day": "Hora do dia"
+      },
+      "operand": "Operando",
+      "operandPlaceholder": {
+        "time_of_day": "HH:mm-HH:mm",
+        "contact_field": "nome / e-mail / empresa",
+        "tag_presence": "id da tag"
+      }
+    }
+  },
+  "logs": {
+    "back": "Voltar",
+    "subtitle": "Logs de execução",
+    "loadError": "Falha ao carregar os logs",
+    "emptyTitle": "Nenhuma execução ainda",
+    "emptyDescription": "Acione esta automação para ver as execuções aqui.",
+    "unknownContact": "Contato desconhecido",
+    "stepCount": "{count, plural, one {# etapa} other {# etapas}}",
+    "noStepsRecorded": "Nenhuma etapa registrada.",
+    "status": {
+      "success": "sucesso",
+      "partial": "parcial",
+      "failed": "falha"
+    }
+  }
+}

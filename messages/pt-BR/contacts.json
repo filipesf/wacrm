@@ -1,0 +1,199 @@
+{
+  "list": {
+    "title": "Contatos",
+    "subtitle": "Gerencie sua lista de contatos.",
+    "totalContacts": "{count, plural, one {# contato no total.} other {# contatos no total.}}",
+    "customFields": "Campos personalizados",
+    "import": "Importar",
+    "addContact": "Adicionar contato",
+    "searchPlaceholder": "Buscar por nome, telefone ou e-mail...",
+    "filterByTags": "Filtrar por tags",
+    "clearAll": "Limpar tudo",
+    "noTagsYet": "Nenhuma tag ainda.",
+    "filterByTagAria": "Filtrar por {name}",
+    "removeTagFilterAria": "Remover filtro {name}",
+    "selected": "{count, plural, one {# contato selecionado} other {# contatos selecionados}}",
+    "clear": "Limpar",
+    "deleteSelected": "Excluir selecionados",
+    "selectAllAria": "Selecionar todos os contatos desta página",
+    "selectRowAria": "Selecionar {name}",
+    "columns": {
+      "name": "Nome",
+      "phone": "Telefone",
+      "email": "E-mail",
+      "company": "Empresa",
+      "tags": "Tags",
+      "created": "Criado em"
+    },
+    "unnamed": "Sem nome",
+    "loading": "Carregando contatos...",
+    "emptyFiltered": "Nenhum contato corresponde aos filtros.",
+    "empty": "Nenhum contato ainda.",
+    "addFirst": "Adicionar seu primeiro contato",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "pagination": {
+      "showing": "Exibindo {from}-{to} de {total}",
+      "page": "Página {page} de {total}"
+    },
+    "deleteDialog": {
+      "title": "Excluir contato",
+      "body": "Tem certeza de que deseja excluir <b>{name}</b>? Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "confirm": "Excluir"
+    },
+    "bulkDeleteDialog": {
+      "title": "{count, plural, one {Excluir # contato} other {Excluir # contatos}}",
+      "body": "Tem certeza de que deseja excluir <b>{count, plural, one {# contato} other {# contatos}}</b>? Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "confirm": "Excluir"
+    },
+    "toasts": {
+      "loadFailed": "Falha ao carregar contatos",
+      "deleteFailed": "Falha ao excluir contato",
+      "deleted": "Contato excluído",
+      "bulkDeleteFailed": "Falha ao excluir contatos",
+      "bulkDeleted": "{count, plural, one {# contato excluído} other {# contatos excluídos}}"
+    }
+  },
+  "form": {
+    "editTitle": "Editar contato",
+    "addTitle": "Adicionar contato",
+    "editDescription": "Atualize os detalhes do contato abaixo.",
+    "addDescription": "Preencha os detalhes para criar um novo contato.",
+    "name": "Nome",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "company": "Empresa",
+    "tags": "Tags",
+    "namePlaceholder": "João Silva",
+    "phonePlaceholder": "+55 11 91234 5678",
+    "emailPlaceholder": "joao@exemplo.com",
+    "companyPlaceholder": "Acme Ltda.",
+    "dupExact": "Já existe um contato com este número de telefone.",
+    "dupSimilar": "Já existe um contato com um número muito parecido.",
+    "viewExisting": "Ver {name}",
+    "countryCodeHint": "Inclua o código do país, ex.: +55 para o Brasil",
+    "loadingTags": "Carregando tags...",
+    "noTags": "Nenhuma tag disponível. Crie tags em Configurações.",
+    "cancel": "Cancelar",
+    "update": "Atualizar",
+    "create": "Criar",
+    "toasts": {
+      "phoneRequired": "O número de telefone é obrigatório",
+      "duplicateExists": "Já existe um contato com este número de telefone",
+      "updated": "Contato atualizado",
+      "created": "Contato criado",
+      "notAuthenticated": "Não autenticado",
+      "notLinked": "Seu perfil não está vinculado a uma conta.",
+      "saveFailed": "Falha ao salvar contato"
+    }
+  },
+  "detail": {
+    "unknown": "Desconhecido",
+    "contactDetails": "Detalhes do contato",
+    "sendTemplate": "Enviar modelo",
+    "tabs": {
+      "details": "Detalhes",
+      "tags": "Tags",
+      "notes": "Notas",
+      "custom": "Campos personalizados",
+      "deals": "Negócios"
+    },
+    "name": "Nome",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "company": "Empresa",
+    "saveChanges": "Salvar alterações",
+    "tagsHint": "Clique em uma tag para adicioná-la ou removê-la deste contato.",
+    "noTags": "Nenhuma tag disponível. Crie tags em Configurações.",
+    "notePlaceholder": "Escreva uma nota...",
+    "addNote": "Adicionar nota",
+    "noNotes": "Nenhuma nota ainda.",
+    "noCustomFields": "Nenhum campo personalizado definido. Crie-os em Configurações.",
+    "customFieldPlaceholder": "Digite {name}...",
+    "saveCustomFields": "Salvar campos personalizados",
+    "noDeals": "Nenhum negócio ainda",
+    "dealStatus": {
+      "won": "ganho",
+      "lost": "perdido"
+    },
+    "toasts": {
+      "phoneRequired": "O número de telefone é obrigatório",
+      "updateFailed": "Falha ao atualizar contato",
+      "updated": "Contato atualizado",
+      "notAuthenticated": "Não autenticado",
+      "addNoteFailed": "Falha ao adicionar nota",
+      "noteAdded": "Nota adicionada",
+      "deleteNoteFailed": "Falha ao excluir nota",
+      "noteDeleted": "Nota excluída",
+      "customSaved": "Campos personalizados salvos",
+      "customSaveFailed": "Falha ao salvar campos personalizados",
+      "sendTemplateFailed": "Falha ao enviar modelo: {reason}",
+      "templateSent": "Modelo \"{name}\" enviado",
+      "networkError": "erro de rede"
+    }
+  },
+  "customFields": {
+    "title": "Campos personalizados",
+    "description": "Defina campos extras de contato (ex.: CEP, origem do lead). Eles aparecem em todos os contatos e na ação de automação “Atualizar campo do contato”.",
+    "newFieldPlaceholder": "Nome do novo campo…",
+    "add": "Adicionar",
+    "loading": "Carregando…",
+    "empty": "Nenhum campo personalizado ainda.",
+    "renameAria": "Renomear {name}",
+    "deleteField": "Excluir campo",
+    "deleteConfirm": "Excluir \"{name}\"? Isso também remove o valor armazenado em todos os contatos. Esta ação não pode ser desfeita.",
+    "toasts": {
+      "notLinked": "Seu perfil não está vinculado a uma conta.",
+      "duplicate": "Já existe um campo chamado \"{name}\".",
+      "created": "\"{name}\" criado.",
+      "createFailed": "Não foi possível criar o campo. Talvez você não tenha permissão.",
+      "renameFailed": "Não foi possível renomear o campo.",
+      "deleteFailed": "Não foi possível excluir o campo.",
+      "deleted": "\"{name}\" excluído."
+    }
+  },
+  "import": {
+    "title": "Importar contatos",
+    "description": "Envie um CSV com uma coluna <code>phone</code> obrigatória. Opcionais: <code>name</code>, <code>email</code>, <code>company</code>, <code>tags</code> (separadas por vírgula; use aspas em células com várias tags).",
+    "rowsReady": "{count, plural, one {# linha pronta} other {# linhas prontas}}",
+    "chooseFile": "Clique para escolher um arquivo CSV",
+    "fileHint": ".csv até o limite do seu navegador",
+    "previewFirst": "Prévia · primeiras {count}",
+    "tagStats": "{tags, plural, one {# tag} other {# tags}} · {contacts, plural, one {# contato} other {# contatos}}",
+    "tagWillBeCreated": "{name} (será criada na importação)",
+    "columns": {
+      "phone": "Telefone",
+      "name": "Nome",
+      "email": "E-mail",
+      "company": "Empresa",
+      "tags": "Tags"
+    },
+    "moreRows": "{count, plural, one {+ # linha não exibida} other {+ # linhas não exibidas}}",
+    "complete": "Importação concluída",
+    "resultImported": "{count} importados",
+    "resultTags": "{count, plural, one {# tag atribuída} other {# tags atribuídas}}",
+    "resultSkipped": "{count} ignorados",
+    "resultFailed": "{count} com falha",
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "importButton": "{count, plural, =0 {Importar contatos} one {Importar # contato} other {Importar # contatos}}",
+    "toasts": {
+      "noRows": "Nenhuma linha válida encontrada. Verifique se o CSV tem um cabeçalho de coluna \"phone\".",
+      "notAuthenticated": "Não autenticado",
+      "notLinked": "Seu perfil não está vinculado a uma conta.",
+      "tagsPartialFail": "Contatos importados, mas algumas atribuições de tags falharam.",
+      "imported": "{count, plural, one {# contato importado} other {# contatos importados}}",
+      "tagsApplied": "{count, plural, one {# atribuição de tag aplicada} other {# atribuições de tags aplicadas}}",
+      "unknownTagsSkipped": "Tags desconhecidas ignoradas (crie-as em Configurações primeiro): {sample}{more, plural, =0 {} other { (+# a mais)}}",
+      "duplicatesSkipped": "{count, plural, one {# duplicado ignorado} other {# duplicados ignorados}}",
+      "failedToImport": "{count, plural, one {# contato não pôde ser importado} other {# contatos não puderam ser importados}}",
+      "importFailed": "Falha na importação"
+    }
+  },
+  "gate": {
+    "addOrImport": "adicionar ou importar contatos",
+    "delete": "excluir contatos"
+  }
+}

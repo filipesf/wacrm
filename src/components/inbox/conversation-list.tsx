@@ -10,7 +10,8 @@ import {
 import { cn } from "@/lib/utils";
 import type { Conversation, ConversationStatus, Tag } from "@/types";
 import { Search, ChevronDown, X } from "lucide-react";
-import { formatDistanceToNow } from "date-fns";
+import { useTranslations } from "next-intl";
+import { useFormat } from "@/i18n/use-format";
 import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
@@ -43,12 +44,12 @@ const STATUS_COLORS: Record<ConversationStatus, string> = {
 
 type InboxFilter = ConversationStatus | "all" | "unread";
 
-const FILTER_OPTIONS: { label: string; value: InboxFilter }[] = [
-  { label: "All", value: "all" },
-  { label: "Unread", value: "unread" },
-  { label: "Open", value: "open" },
-  { label: "Pending", value: "pending" },
-  { label: "Closed", value: "closed" },
+const FILTER_VALUES: InboxFilter[] = [
+  "all",
+  "unread",
+  "open",
+  "pending",
+  "closed",
 ];
 
 export function ConversationList({
@@ -58,6 +59,7 @@ export function ConversationList({
   onConversationsLoaded,
   resyncToken = 0,
 }: ConversationListProps) {
+  const t = useTranslations("inbox");
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<InboxFilter>("all");
   const [loading, setLoading] = useState(true);
@@ -149,7 +151,7 @@ export function ConversationList({
 
   const tagsById = useMemo(() => {
     const m = new Map<string, Tag>();
-    for (const t of tags) m.set(t.id, t);
+    for (const tag of tags) m.set(tag.id, tag);
     return m;
   }, [tags]);
 
@@ -187,7 +189,7 @@ export function ConversationList({
 
   const toggleTag = useCallback((id: string) => {
     setSelectedTagIds((prev) =>
-      prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((tagId) => tagId !== id) : [...prev, id]
     );
   }, []);
 
@@ -212,7 +214,7 @@ export function ConversationList({
     [onSelect]
   );
 
-  const activeFilter = FILTER_OPTIONS.find((o) => o.value === filter);
+  const activeFilterLabel = t(`list.filters.${filter}`);
 
   return (
     // w-full on mobile so the list occupies the whole viewport when it's
@@ -226,7 +228,7 @@ export function ConversationList({
           <Input
             value={search}
             onChange={handleSearchChange}
-            placeholder="Search conversations..."
+            placeholder={t("list.searchPlaceholder")}
             className="border-border bg-muted pl-9 text-sm text-foreground placeholder-muted-foreground focus:border-primary/50"
           />
         </div>
@@ -234,25 +236,25 @@ export function ConversationList({
         <div className="flex flex-wrap items-center gap-1">
           <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex items-center justify-center h-7 gap-1 px-2 text-xs text-muted-foreground hover:text-foreground rounded-md hover:bg-muted">
-                {activeFilter?.label ?? "All"}
+                {activeFilterLabel}
                 <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
               className="border-border bg-popover"
             >
-              {FILTER_OPTIONS.map((opt) => (
+              {FILTER_VALUES.map((value) => (
                 <DropdownMenuItem
-                  key={opt.value}
-                  onClick={() => setFilter(opt.value)}
+                  key={value}
+                  onClick={() => setFilter(value)}
                   className={cn(
                     "text-sm",
-                    filter === opt.value
+                    filter === value
                       ? "text-primary"
                       : "text-popover-foreground"
                   )}
                 >
-                  {opt.label}
+                  {t(`list.filters.${value}`)}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -268,7 +270,7 @@ export function ConversationList({
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                Tags
+                {t("list.tags")}
                 {selectedTagIds.length > 0 && (
                   <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
                     {selectedTagIds.length}
@@ -280,19 +282,19 @@ export function ConversationList({
                 align="start"
                 className="max-h-64 w-56 border-border bg-popover"
               >
-                {tags.map((t) => (
+                {tags.map((tag) => (
                   <DropdownMenuCheckboxItem
-                    key={t.id}
-                    checked={selectedTagIds.includes(t.id)}
-                    onCheckedChange={() => toggleTag(t.id)}
+                    key={tag.id}
+                    checked={selectedTagIds.includes(tag.id)}
+                    onCheckedChange={() => toggleTag(tag.id)}
                     className="text-sm text-popover-foreground"
                   >
                     <span className="flex items-center gap-2">
                       <span
                         className="h-2 w-2 shrink-0 rounded-full"
-                        style={{ backgroundColor: t.color }}
+                        style={{ backgroundColor: tag.color }}
                       />
-                      <span className="truncate">{t.name}</span>
+                      <span className="truncate">{tag.name}</span>
                     </span>
                   </DropdownMenuCheckboxItem>
                 ))}
@@ -310,7 +312,7 @@ export function ConversationList({
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                <span className="truncate">{selectedCompany ?? "Company"}</span>
+                <span className="truncate">{selectedCompany ?? t("list.company")}</span>
                 <ChevronDown className="h-3 w-3 shrink-0" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -326,7 +328,7 @@ export function ConversationList({
                       : "text-popover-foreground"
                   )}
                 >
-                  All companies
+                  {t("list.allCompanies")}
                 </DropdownMenuItem>
                 {companies.map((co) => (
                   <DropdownMenuItem
@@ -361,7 +363,7 @@ export function ConversationList({
                     className="h-1.5 w-1.5 shrink-0 rounded-full"
                     style={{ backgroundColor: tag?.color ?? "var(--muted-foreground)" }}
                   />
-                  <span className="max-w-24 truncate">{tag?.name ?? "Tag"}</span>
+                  <span className="max-w-24 truncate">{tag?.name ?? t("list.tagFallback")}</span>
                   <X className="h-3 w-3" />
                 </button>
               );
@@ -379,7 +381,7 @@ export function ConversationList({
               onClick={clearContactFilters}
               className="px-1 text-[11px] text-muted-foreground hover:text-foreground"
             >
-              Clear all
+              {t("list.clearAll")}
             </button>
           </div>
         )}
@@ -398,7 +400,7 @@ export function ConversationList({
           </div>
         ) : filtered.length === 0 ? (
           <div className="px-4 py-12 text-center">
-            <p className="text-sm text-muted-foreground">No conversations found</p>
+            <p className="text-sm text-muted-foreground">{t("list.empty")}</p>
           </div>
         ) : (
           <div className="flex flex-col">
@@ -428,8 +430,10 @@ function ConversationItem({
   isActive,
   onSelect,
 }: ConversationItemProps) {
+  const t = useTranslations("inbox");
+  const fmt = useFormat();
   const contact = conversation.contact;
-  const displayName = contact?.name || contact?.phone || "Unknown";
+  const displayName = contact?.name || contact?.phone || t("list.unknownContact");
   const initials = displayName.charAt(0).toUpperCase();
 
   const handleClick = useCallback(() => {
@@ -437,9 +441,7 @@ function ConversationItem({
   }, [onSelect, conversation]);
 
   const timeAgo = conversation.last_message_at
-    ? formatDistanceToNow(new Date(conversation.last_message_at), {
-        addSuffix: false,
-      })
+    ? fmt.relativeTime(new Date(conversation.last_message_at))
     : "";
 
   return (
@@ -473,7 +475,7 @@ function ConversationItem({
         </div>
         <div className="mt-0.5 flex items-center justify-between gap-2">
           <p className="truncate text-xs text-muted-foreground">
-            {conversation.last_message_text || "No messages yet"}
+            {conversation.last_message_text || t("list.noMessages")}
           </p>
           <div className="flex shrink-0 items-center gap-1.5">
             {conversation.unread_count > 0 && (
@@ -486,7 +488,7 @@ function ConversationItem({
                 "h-2 w-2 rounded-full",
                 STATUS_COLORS[conversation.status]
               )}
-              title={conversation.status}
+              title={t(`list.statuses.${conversation.status}`)}
             />
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import type { Message } from "@/types";
 
@@ -26,6 +27,7 @@ export function ReplyQuote({
   onDismiss,
   onPrimary = false,
 }: ReplyQuoteProps) {
+  const t = useTranslations("inbox");
   const isChip = !!onDismiss;
   return (
     <div
@@ -63,7 +65,7 @@ export function ReplyQuote({
         <button
           type="button"
           onClick={onDismiss}
-          aria-label="Cancel reply"
+          aria-label={t("reply.cancelReply")}
           className="flex h-6 w-6 shrink-0 items-center justify-center rounded text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           <X className="h-3.5 w-3.5" />
@@ -73,23 +75,31 @@ export function ReplyQuote({
   );
 }
 
-/** Build the one-line preview text shown inside a reply quote. */
-export function buildReplyPreview(message: Message): string {
+/**
+ * Build the one-line preview text shown inside a reply quote. Media types
+ * fall back to a translated placeholder — the caller passes its `inbox`
+ * namespace translator (this is a plain helper, not a component, so it
+ * can't call `useTranslations` itself).
+ */
+export function buildReplyPreview(
+  message: Message,
+  t: (key: string) => string,
+): string {
   if (message.content_text) return message.content_text;
   switch (message.content_type) {
     case "image":
-      return "[Image]";
+      return t("reply.preview.image");
     case "video":
-      return "[Video]";
+      return t("reply.preview.video");
     case "audio":
-      return "[Audio]";
+      return t("reply.preview.audio");
     case "document":
-      return "[Document]";
+      return t("reply.preview.document");
     case "location":
-      return "[Location]";
+      return t("reply.preview.location");
     case "template":
-      return "[Template]";
+      return t("reply.preview.template");
     default:
-      return "[Message]";
+      return t("reply.preview.message");
   }
 }

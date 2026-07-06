@@ -1,0 +1,241 @@
+{
+  "list": {
+    "title": "Automations",
+    "subtitle": "Build workflows that react to WhatsApp® events automatically.",
+    "createButton": "Create Automation",
+    "createGateReason": "create automations",
+    "quickStartHeading": "Quick-start templates",
+    "emptyTitle": "No automations yet",
+    "emptyDescription": "Pick a template above or create one from scratch.",
+    "loadError": "Failed to load automations",
+    "retry": "Retry",
+    "activeIndicator": "active",
+    "runs": "{count, plural, one {# run} other {# runs}}",
+    "lastRun": "last run {time}",
+    "lastNever": "never run",
+    "menu": {
+      "open": "Open menu",
+      "edit": "Edit",
+      "duplicate": "Duplicate",
+      "viewLogs": "View Logs",
+      "delete": "Delete"
+    },
+    "switch": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "deleteDialog": {
+      "title": "Delete automation",
+      "body": "This permanently removes <name></name> and its execution history. This cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    },
+    "toast": {
+      "activated": "Automation activated",
+      "paused": "Automation paused",
+      "updateFailed": "Failed to update",
+      "duplicated": "Automation duplicated",
+      "duplicateFailed": "Failed to duplicate",
+      "deleted": "Automation deleted",
+      "deleteFailed": "Failed to delete"
+    }
+  },
+  "templates": {
+    "welcome_message": {
+      "name": "Welcome Message",
+      "description": "Auto-reply to first-time contacts with a greeting."
+    },
+    "out_of_office": {
+      "name": "Out of Office",
+      "description": "Auto-reply during off-hours so nobody is left waiting."
+    },
+    "lead_qualifier": {
+      "name": "Lead Qualifier",
+      "description": "Ask qualification questions to filter inbound leads."
+    },
+    "follow_up_reminder": {
+      "name": "Follow-up Reminder",
+      "description": "Send a nudge if a contact has not replied within 24 hours."
+    }
+  },
+  "triggers": {
+    "new_message_received": "New Message",
+    "first_inbound_message": "First Message from Contact",
+    "keyword_match": "Keyword Match",
+    "new_contact_created": "New Contact",
+    "conversation_assigned": "Conversation Assigned",
+    "tag_added": "Tag Added",
+    "time_based": "Time-Based"
+  },
+  "steps": {
+    "send_message": "Send Message",
+    "send_template": "Send Template",
+    "add_tag": "Add Tag",
+    "remove_tag": "Remove Tag",
+    "assign_conversation": "Assign Conversation",
+    "update_contact_field": "Update Contact Field",
+    "create_deal": "Create Deal",
+    "wait": "Wait",
+    "condition": "Condition (If/Else)",
+    "send_webhook": "Send Webhook",
+    "close_conversation": "Close Conversation"
+  },
+  "builder": {
+    "backAria": "Back to automations",
+    "backToList": "Back to Automations",
+    "loadError": "Failed to load ({status})",
+    "namePlaceholder": "Untitled automation",
+    "untitled": "Untitled automation",
+    "active": "Active",
+    "save": "Save",
+    "saveDraft": "Save Draft",
+    "toast": {
+      "saved": "Automation saved",
+      "created": "Automation created",
+      "saveFailed": "Save failed",
+      "issueAt": "at {path}"
+    },
+    "trigger": {
+      "eyebrow": "Trigger",
+      "typeLabel": "Trigger type",
+      "tagLabel": "Tag",
+      "schedulePlaceholder": "Cron expression or HH:mm",
+      "keywordsLabel": "Keywords (comma-separated)",
+      "keywordsPlaceholder": "e.g. pricing, demo request, talk to sales",
+      "matchTypeLabel": "Match type",
+      "matchType": {
+        "contains": "Contains",
+        "exact": "Exact"
+      }
+    },
+    "triggerOptions": {
+      "new_message_received": {
+        "label": "New Message Received",
+        "hint": "Any incoming message"
+      },
+      "first_inbound_message": {
+        "label": "First Message from Contact",
+        "hint": "First time this contact ever messages you (works for manually-added contacts too)"
+      },
+      "keyword_match": {
+        "label": "Keyword Match",
+        "hint": "Message contains specific keyword(s)"
+      },
+      "new_contact_created": {
+        "label": "New Contact Created",
+        "hint": "When a contact is auto-created from an incoming message"
+      },
+      "conversation_assigned": {
+        "label": "Conversation Assigned",
+        "hint": "When assigned to an agent"
+      },
+      "tag_added": {
+        "label": "Tag Added",
+        "hint": "When a tag is added to a contact"
+      },
+      "time_based": {
+        "label": "Time-Based",
+        "hint": "On a recurring schedule"
+      }
+    },
+    "stepKinds": {
+      "condition": "Condition",
+      "wait": "Wait",
+      "action": "Action"
+    },
+    "branch": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "addStep": "Add step",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "delete": "Delete",
+    "preview": {
+      "noText": "no text yet",
+      "pickTemplate": "pick a template",
+      "noUrl": "no url",
+      "wait": "{amount} {unit}",
+      "condition": "when {subject}"
+    },
+    "fields": {
+      "messageText": "Message text",
+      "messageTextPlaceholder": "Hi! Thanks for reaching out…",
+      "templateName": "Template name",
+      "language": "Language",
+      "template": "Template",
+      "selectTemplate": "Select a template…",
+      "templateNotApproved": "{name} ({language}) — not in approved list",
+      "templateUnknownLang": "unknown",
+      "tag": "Tag",
+      "tagIdPlaceholder": "Tag id",
+      "selectTag": "Select a tag…",
+      "unknownTag": "{value} (unknown tag)",
+      "mode": "Mode",
+      "modeRoundRobin": "Round-robin",
+      "modeSpecific": "Specific agent",
+      "agent": "Agent",
+      "agentIdPlaceholder": "Agent id",
+      "selectAgent": "Select an agent…",
+      "unknownAgent": "{value} (unknown agent)",
+      "field": "Field",
+      "fieldName": "Name",
+      "fieldEmail": "Email",
+      "fieldCompany": "Company",
+      "customFields": "Custom fields",
+      "unknownField": "{value} (unknown field)",
+      "value": "Value",
+      "valuePlaceholder": "Text or {sample}",
+      "pipelineId": "Pipeline id",
+      "stageId": "Stage id",
+      "pipeline": "Pipeline",
+      "stage": "Stage",
+      "selectPipeline": "Select a pipeline…",
+      "selectStage": "Select a stage…",
+      "selectPipelineFirst": "Select a pipeline first…",
+      "unknownPipeline": "{value} (unknown pipeline)",
+      "unknownStage": "{value} (unknown stage)",
+      "title": "Title",
+      "amount": "Amount",
+      "unit": "Unit",
+      "webhookUrl": "URL",
+      "bodyTemplate": "Body template (JSON)",
+      "closeConversationNote": "Sets the conversation status to \"closed\". No configuration needed."
+    },
+    "units": {
+      "minutes": "Minutes",
+      "hours": "Hours",
+      "days": "Days"
+    },
+    "condition": {
+      "subject": "Subject",
+      "subjects": {
+        "tag_presence": "Tag presence",
+        "contact_field": "Contact field",
+        "message_content": "Message content",
+        "time_of_day": "Time of day"
+      },
+      "operand": "Operand",
+      "operandPlaceholder": {
+        "time_of_day": "HH:mm-HH:mm",
+        "contact_field": "name / email / company",
+        "tag_presence": "tag id"
+      }
+    }
+  },
+  "logs": {
+    "back": "Back",
+    "subtitle": "Execution logs",
+    "loadError": "Failed to load logs",
+    "emptyTitle": "No executions yet",
+    "emptyDescription": "Trigger this automation to see runs here.",
+    "unknownContact": "Unknown contact",
+    "stepCount": "{count, plural, one {# step} other {# steps}}",
+    "noStepsRecorded": "No steps recorded.",
+    "status": {
+      "success": "success",
+      "partial": "partial",
+      "failed": "failed"
+    }
+  }
+}
