@@ -79,91 +79,78 @@ export interface BuilderNode {
 
 export type NodeCategory = 'messaging' | 'logic' | 'flow';
 
-/** Category labels + the order they render in the add-step menu. */
-export const NODE_CATEGORIES: { id: NodeCategory; label: string }[] = [
-  { id: 'messaging', label: 'Messaging' },
-  { id: 'logic', label: 'Logic & data' },
-  { id: 'flow', label: 'Flow control' },
+/**
+ * Category ids in the order they render in the add-step menu. Labels
+ * are localized at the call site via `t('categories.<id>')`.
+ */
+export const NODE_CATEGORIES: { id: NodeCategory }[] = [
+  { id: 'messaging' },
+  { id: 'logic' },
+  { id: 'flow' },
 ];
 
+/**
+ * Structural per-node metadata. User-facing `label` / `blurb` are NOT
+ * here — they're localized at the call site via `t('nodes.<type>.label')`
+ * / `t('nodes.<type>.blurb')`. This file only owns the icon, tint, and
+ * category, which never change with locale.
+ */
 export const NODE_META: Record<
   NodeType,
   {
-    label: string;
     icon: typeof Workflow;
     color: string;
-    blurb: string;
     category: NodeCategory;
   }
 > = {
   start: {
-    label: 'Start',
     icon: PlayCircle,
     color: 'text-emerald-400',
-    blurb: 'Entry point of the flow',
     category: 'flow',
   },
   send_message: {
-    label: 'Send message',
     icon: MessageCircle,
     color: 'text-sky-400',
-    blurb: 'Sends a WhatsApp text message',
     category: 'messaging',
   },
   send_buttons: {
-    label: 'Send buttons',
     icon: ListChecks,
     color: 'text-primary',
-    blurb: 'Sends quick-reply buttons',
     category: 'messaging',
   },
   send_list: {
-    label: 'Send list',
     icon: ListPlus,
     color: 'text-indigo-400',
-    blurb: 'Sends a tappable list of options',
     category: 'messaging',
   },
   send_media: {
-    label: 'Send media',
     icon: Paperclip,
     color: 'text-cyan-400',
-    blurb: 'Sends an image, video, or document',
     category: 'messaging',
   },
   collect_input: {
-    label: 'Collect input',
     icon: Inbox,
     color: 'text-teal-400',
-    blurb: 'Asks a question, saves the reply',
     category: 'logic',
   },
   condition: {
-    label: 'If / else',
     icon: GitFork,
     color: 'text-fuchsia-400',
-    blurb: 'Branches on a rule',
     category: 'logic',
   },
   set_tag: {
-    label: 'Tag contact',
     icon: Tag,
     color: 'text-pink-400',
-    blurb: 'Adds or removes a contact tag',
     category: 'logic',
   },
   handoff: {
-    label: 'Handoff to agent',
     icon: UserPlus,
     color: 'text-amber-400',
-    blurb: 'Hands the conversation to a human',
     category: 'flow',
   },
   end: {
-    label: 'End',
     icon: Flag,
     color: 'text-muted-foreground',
-    blurb: 'Ends the flow',
     category: 'flow',
   },
 };
@@ -176,10 +163,9 @@ export const NODE_META: Record<
  */
 export function groupNodeTypesByCategory(
   types: NodeType[]
-): { id: NodeCategory; label: string; types: NodeType[] }[] {
-  return NODE_CATEGORIES.map(({ id, label }) => ({
+): { id: NodeCategory; types: NodeType[] }[] {
+  return NODE_CATEGORIES.map(({ id }) => ({
     id,
-    label,
     types: types.filter((t) => NODE_META[t].category === id),
   })).filter((group) => group.types.length > 0);
 }
@@ -305,7 +291,21 @@ export function truncate(s: string, max = 80): string {
   return clean.slice(0, max - 1) + '…';
 }
 
-export function summarizeNode(node: BuilderNode): string | null {
+/**
+ * Minimal translator shape — matches next-intl's `useTranslations`
+ * return value (callable with an optional ICU values object). Kept
+ * loose so `summarizeNode` stays a pure helper that both views can
+ * feed their own `t` into without importing the hook here.
+ */
+export type NodeSummaryTranslator = (
+  key: string,
+  values?: Record<string, string | number>
+) => string;
+
+export function summarizeNode(
+  node: BuilderNode,
+  t: NodeSummaryTranslator
+): string | null {
   const cfg = node.config;
   switch (node.node_type) {
     case 'start':
@@ -342,11 +342,14 @@ export function summarizeNode(node: BuilderNode): string | null {
       }, 0);
       if (text.length > 0) {
         return rowCount > 0
-          ? `${truncate(text, 50)} · ${rowCount} option${rowCount === 1 ? '' : 's'}`
+          ? `${truncate(text, 50)} · ${t('summary.options', { count: rowCount })}`
           : truncate(text);
       }
       return rowCount > 0
-        ? `${rowCount} option${rowCount === 1 ? '' : 's'} across ${sections.length} section${sections.length === 1 ? '' : 's'}`
+        ? t('summary.optionsAcrossSections', {
+            optionCount: rowCount,
+            sectionCount: sections.length,
+          })
         : null;
     }
     case 'send_media': {
@@ -355,10 +358,15 @@ export function summarizeNode(node: BuilderNode): string | null {
       const filename = typeof cfg.filename === 'string' ? cfg.filename : '';
       const url = typeof cfg.media_url === 'string' ? cfg.media_url : '';
       const caption = typeof cfg.caption === 'string' ? cfg.caption : '';
-      const label = mediaType
-        ? mediaType.charAt(0).toUpperCase() + mediaType.slice(1)
-        : 'Media';
-      if (!url) return `${label} (no file uploaded)`;
+      const label =
+        mediaType === 'image'
+          ? t('summary.media.image')
+          : mediaType === 'video'
+            ? t('summary.media.video')
+            : mediaType === 'document'
+              ? t('summary.media.document')
+              : t('summary.media.generic');
+      if (!url) return t('summary.media.noFile', { label });
       const name = filename || url.split('/').pop() || 'file';
       return caption
         ? `${label}: ${truncate(name, 30)} · ${truncate(caption, 40)}`
@@ -378,42 +386,47 @@ export function summarizeNode(node: BuilderNode): string | null {
       const subjectKey =
         typeof cfg.subject_key === 'string' ? cfg.subject_key : '';
       if (!subjectKey) return null;
+      if (cfg.subject === 'tag') {
+        return t('summary.condition.hasTag', {
+          tag: truncate(subjectKey, 24),
+        });
+      }
       const subject =
-        cfg.subject === 'tag'
-          ? 'tag'
-          : cfg.subject === 'contact_field'
-            ? 'field'
-            : 'var';
-      const subjectStr =
-        subject === 'tag'
-          ? `has tag ${truncate(subjectKey, 24)}`
-          : `${subject}.${subjectKey}`;
+        cfg.subject === 'contact_field'
+          ? t('summary.condition.subjectField')
+          : t('summary.condition.subjectVar');
+      const subjectStr = `${subject}.${subjectKey}`;
       const op =
         cfg.operator === 'equals'
-          ? '=='
+          ? t('summary.condition.opEquals')
           : cfg.operator === 'contains'
-            ? 'contains'
+            ? t('summary.condition.opContains')
             : cfg.operator === 'present'
-              ? 'exists'
+              ? t('summary.condition.opPresent')
               : cfg.operator === 'absent'
-                ? 'missing'
+                ? t('summary.condition.opAbsent')
                 : '';
       const value = typeof cfg.value === 'string' ? cfg.value : '';
       const valStr =
         (cfg.operator === 'equals' || cfg.operator === 'contains') && value
           ? ` "${truncate(value, 20)}"`
           : '';
-      return subject === 'tag' ? subjectStr : `${subjectStr} ${op}${valStr}`;
+      return `${subjectStr} ${op}${valStr}`;
     }
     case 'set_tag': {
-      const mode = cfg.mode === 'remove' ? 'Remove' : 'Add';
       const tagId = typeof cfg.tag_id === 'string' ? cfg.tag_id : '';
+      const isRemove = cfg.mode === 'remove';
       // No tag name available without an async lookup here; show a
       // short prefix of the UUID so users can disambiguate between
       // multiple set_tag nodes at a glance.
-      return tagId
-        ? `${mode} tag ${tagId.slice(0, 8)}…`
-        : `${mode} tag (none picked)`;
+      if (tagId) {
+        return isRemove
+          ? t('summary.setTag.remove', { id: tagId.slice(0, 8) })
+          : t('summary.setTag.add', { id: tagId.slice(0, 8) });
+      }
+      return isRemove
+        ? t('summary.setTag.removeNone')
+        : t('summary.setTag.addNone');
     }
     case 'handoff': {
       const note = typeof cfg.note === 'string' ? cfg.note : '';

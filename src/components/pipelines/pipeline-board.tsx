@@ -18,8 +18,9 @@ import type { Deal, PipelineStage } from "@/types";
 import { DealCard } from "./deal-card";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useAuth } from "@/hooks/use-auth";
-import { formatCurrency } from "@/lib/currency";
+import { useFormat } from "@/i18n/use-format";
 
 interface PipelineBoardProps {
   stages: PipelineStage[];
@@ -200,6 +201,8 @@ function StageColumn({
   onAddDeal: (stageId: string) => void;
   onEditDeal: (deal: Deal) => void;
 }) {
+  const t = useTranslations("pipelines.board");
+  const fmt = useFormat();
   const { setNodeRef, isOver } = useDroppable({ id: stage.id });
 
   return (
@@ -224,7 +227,7 @@ function StageColumn({
         </span>
       </div>
       <p className="text-xs text-muted-foreground">
-        {formatCurrency(totalValue, currency)}
+        {fmt.currency(totalValue, currency)}
       </p>
 
       <div
@@ -237,7 +240,7 @@ function StageColumn({
       >
         {deals.length === 0 ? (
           <div className="flex flex-1 items-center justify-center rounded-lg border-2 border-dashed border-border py-10 text-xs text-muted-foreground">
-            Drop a deal here
+            {t("dropHere")}
           </div>
         ) : (
           deals.map((deal) => (
@@ -258,7 +261,7 @@ function StageColumn({
         className="mt-3 w-full justify-start border border-dashed border-border bg-transparent text-muted-foreground hover:border-border hover:bg-muted hover:text-foreground"
       >
         <Plus className="mr-1 h-3 w-3" />
-        Add Deal
+        {t("addDeal")}
       </Button>
     </div>
   );

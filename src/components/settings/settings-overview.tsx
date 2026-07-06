@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { ChevronRight, Loader2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import { createClient } from '@/lib/supabase/client';
 import { useAuth } from '@/hooks/use-auth';
@@ -38,6 +39,8 @@ export function SettingsOverview({
   const { user, profile, accountId, accountRole, defaultCurrency, canManageMembers } =
     useAuth();
   const { mode, theme } = useTheme();
+  const t = useTranslations('settings');
+  const tOverview = useTranslations('settings.overview');
 
   const [counts, setCounts] = useState<OverviewCounts | null>(null);
   const [countsLoading, setCountsLoading] = useState(true);
@@ -137,15 +140,15 @@ export function SettingsOverview({
     };
   }, [user?.id, accountId, canManageMembers]);
 
-  const displayName = profile?.full_name || profile?.email || 'Your account';
+  const displayName =
+    profile?.full_name || profile?.email || tOverview('accountFallback');
   const initial = (profile?.full_name || profile?.email || 'U').charAt(0).toUpperCase();
   const roleMeta = accountRole ? ROLE_META[accountRole] : null;
   const RoleIcon = roleMeta?.icon;
 
   const currencyLabel =
     CURRENCIES.find((c) => c.code === defaultCurrency)?.label ?? defaultCurrency;
-  const themeName = THEMES.find((t) => t.id === theme)?.name ?? theme;
-  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+  const themeName = THEMES.find((th) => th.id === theme)?.name ?? theme;
 
   // Per-tile loading + subtitle. `null` counts render as a graceful
   // fallback so a single failed query never blanks a tile.
@@ -158,14 +161,14 @@ export function SettingsOverview({
       section: 'whatsapp',
       loading: whatsappLoading,
       subtitle: !whatsapp?.configured ? (
-        'Not set up yet'
+        tOverview('whatsapp.notSetup')
       ) : whatsapp.connected ? (
         <>
-          <StatusDot tone="ok" /> Connected
+          <StatusDot tone="ok" /> {tOverview('whatsapp.connected')}
         </>
       ) : (
         <>
-          <StatusDot tone="muted" /> Needs reconnecting
+          <StatusDot tone="muted" /> {tOverview('whatsapp.needsReconnect')}
         </>
       ),
     },
@@ -174,12 +177,12 @@ export function SettingsOverview({
       loading: countsLoading,
       subtitle:
         counts?.members == null
-          ? 'View team members'
-          : `${counts.members} member${counts.members === 1 ? '' : 's'}${
+          ? tOverview('members.view')
+          : `${tOverview('members.count', { count: counts.members })}${
               counts.pendingInvites
-                ? ` · ${counts.pendingInvites} pending invite${
-                    counts.pendingInvites === 1 ? '' : 's'
-                  }`
+                ? ` · ${tOverview('members.pending', {
+                    count: counts.pendingInvites,
+                  })}`
                 : ''
             }`,
     },
@@ -188,10 +191,12 @@ export function SettingsOverview({
       loading: countsLoading,
       subtitle:
         counts?.templates == null
-          ? 'Manage message templates'
-          : `${counts.templates} template${counts.templates === 1 ? '' : 's'}${
+          ? tOverview('templates.manage')
+          : `${tOverview('templates.count', { count: counts.templates })}${
               counts.templatesPending
-                ? ` · ${counts.templatesPending} pending review`
+                ? ` · ${tOverview('templates.pendingReview', {
+                    count: counts.templatesPending,
+                  })}`
                 : ''
             }`,
     },
@@ -205,15 +210,19 @@ export function SettingsOverview({
       loading: countsLoading,
       subtitle:
         counts?.tags == null && counts?.customFields == null
-          ? 'Tags and custom fields'
-          : `${counts?.tags ?? 0} tag${counts?.tags === 1 ? '' : 's'} · ${
-              counts?.customFields ?? 0
-            } custom field${counts?.customFields === 1 ? '' : 's'}`,
+          ? tOverview('fields.default')
+          : `${tOverview('fields.tags', { count: counts?.tags ?? 0 })} · ${tOverview(
+              'fields.customFields',
+              { count: counts?.customFields ?? 0 },
+            )}`,
     },
     {
       section: 'appearance',
       loading: false,
-      subtitle: `${cap(mode)} mode · ${themeName} accent`,
+      subtitle: tOverview('appearance', {
+        mode: t(`appearance.modes.${mode}`),
+        theme: themeName,
+      }),
     },
   ];
 
@@ -239,10 +248,10 @@ export function SettingsOverview({
             </div>
           ) : null}
         </div>
-        {roleMeta && RoleIcon ? (
+        {roleMeta && RoleIcon && accountRole ? (
           <SettingsChip variant={roleMeta.variant}>
             <RoleIcon />
-            {roleMeta.label}
+            {t(`roles.${accountRole}`)}
           </SettingsChip>
         ) : null}
       </Card>
@@ -252,6 +261,7 @@ export function SettingsOverview({
         {tiles.map(({ section, loading, subtitle }) => {
           const meta = SECTION_META[section];
           const Icon = meta.icon;
+          const label = t(`sections.${section}`);
           return (
             <button
               key={section}
@@ -267,12 +277,12 @@ export function SettingsOverview({
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-semibold text-foreground">
-                  {meta.label}
+                  {label}
                 </span>
                 <span className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground">
                   {loading ? (
                     <>
-                      <Loader2 className="size-3 animate-spin" /> Loading…
+                      <Loader2 className="size-3 animate-spin" /> {tOverview('loading')}
                     </>
                   ) : (
                     subtitle

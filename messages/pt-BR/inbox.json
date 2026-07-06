@@ -1,0 +1,158 @@
+{
+  "sidebar": {
+    "selectConversation": "Selecione uma conversa",
+    "tags": "Tags",
+    "noTags": "Nenhuma tag",
+    "activeDeals": "Negócios ativos",
+    "noDeals": "Nenhum negócio",
+    "notes": "Notas",
+    "addNotePlaceholder": "Adicionar uma nota..."
+  },
+  "list": {
+    "searchPlaceholder": "Buscar conversas...",
+    "filters": {
+      "all": "Todas",
+      "unread": "Não lidas",
+      "open": "Abertas",
+      "pending": "Pendentes",
+      "closed": "Fechadas"
+    },
+    "tags": "Tags",
+    "company": "Empresa",
+    "allCompanies": "Todas as empresas",
+    "tagFallback": "Tag",
+    "clearAll": "Limpar tudo",
+    "empty": "Nenhuma conversa encontrada",
+    "unknownContact": "Desconhecido",
+    "noMessages": "Nenhuma mensagem ainda",
+    "statuses": {
+      "open": "Aberta",
+      "pending": "Pendente",
+      "closed": "Fechada"
+    }
+  },
+  "actions": {
+    "nothingToCopy": "Nada para copiar",
+    "copied": "Copiado",
+    "copyFailed": "Falha ao copiar",
+    "react": "Reagir",
+    "reactWith": "Reagir com {emoji}",
+    "reply": "Responder",
+    "copy": "Copiar"
+  },
+  "bubble": {
+    "media": {
+      "image": "Imagem",
+      "video": "Vídeo",
+      "audio": "Áudio",
+      "document": "Documento"
+    },
+    "mediaUnavailable": "{label} indisponível",
+    "sharedImage": "Imagem compartilhada",
+    "template": "Modelo",
+    "locationShared": "Localização compartilhada",
+    "buttonReply": "Resposta de botão",
+    "interactiveReply": "[Resposta interativa]",
+    "unsupported": "[Tipo de mensagem não suportado]"
+  },
+  "composer": {
+    "kinds": {
+      "image": "imagem",
+      "video": "vídeo",
+      "document": "documento",
+      "audio": "áudio"
+    },
+    "fileTooLarge": "O arquivo tem {size} MB — o limite de {kind} é {limit} MB.",
+    "uploadFailed": "Falha no upload.",
+    "recordingTooLong": "A gravação é muito longa (mais de 16 MB).",
+    "recordingUnsupported": "A gravação de voz não é suportada neste navegador.",
+    "microphoneDenied": "Acesso ao microfone negado ou indisponível.",
+    "sessionExpiredBanner": "Sessão de 24 horas expirada. Use um modelo para reengajar.",
+    "templates": "Modelos",
+    "recording": "Gravando… {current} / {max}",
+    "cancel": "Cancelar",
+    "stopAndAttach": "Parar e anexar",
+    "attachReadOnly": "Somente leitura — seu perfil não pode enviar mensagens",
+    "attachMedia": "Anexar mídia",
+    "photo": "Foto",
+    "video": "Vídeo",
+    "document": "Documento",
+    "voiceNote": "Nota de voz",
+    "sendTemplate": "Enviar modelo",
+    "placeholderReadOnly": "Somente leitura — visualizadores podem ver, mas não responder",
+    "placeholderExpired": "Sessão expirada - use um modelo",
+    "placeholderDefault": "Digite uma mensagem... (Shift+Enter para nova linha)",
+    "quickRepliesHint": "Digite '/' para respostas rápidas",
+    "removeAttachment": "Remover anexo",
+    "captionPlaceholder": "Adicionar uma legenda…"
+  },
+  "thread": {
+    "today": "Hoje",
+    "yesterday": "Ontem",
+    "statuses": {
+      "open": "Aberta",
+      "pending": "Pendente",
+      "closed": "Fechada"
+    },
+    "noCustomerMessages": "Nenhuma mensagem do cliente",
+    "expired": "Expirada",
+    "hoursRemaining": "{hours}h restantes",
+    "minutesRemaining": "{minutes}min restantes",
+    "failedToSend": "Falha ao enviar: {reason}",
+    "failedToSendTemplate": "Falha ao enviar modelo: {reason}",
+    "waitForSend": "Aguarde a mensagem terminar de enviar",
+    "reactionFailed": "Falha na reação: {reason}",
+    "assignmentFailed": "Falha ao atualizar atribuição",
+    "you": "Você",
+    "customer": "Cliente",
+    "emptyTitle": "Selecione uma conversa",
+    "emptyDescription": "Escolha uma conversa à esquerda para começar a conversar",
+    "backToConversations": "Voltar às conversas",
+    "hideContactPanel": "Ocultar painel de contato",
+    "showContactPanel": "Mostrar painel de contato",
+    "hideContact": "Ocultar contato",
+    "showContact": "Mostrar contato",
+    "refreshConversation": "Atualizar conversa",
+    "refresh": "Atualizar",
+    "status": "Status",
+    "assigned": "Atribuído",
+    "assign": "Atribuir",
+    "noTeammates": "Nenhum colega disponível",
+    "nameMe": "{name} (eu)",
+    "unassign": "Remover atribuição",
+    "noMessagesTitle": "Nenhuma mensagem ainda",
+    "noMessagesDescription": "Envie um modelo para iniciar a conversa"
+  },
+  "reply": {
+    "cancelReply": "Cancelar resposta",
+    "preview": {
+      "image": "[Imagem]",
+      "video": "[Vídeo]",
+      "audio": "[Áudio]",
+      "document": "[Documento]",
+      "location": "[Localização]",
+      "template": "[Modelo]",
+      "message": "[Mensagem]"
+    }
+  },
+  "templates": {
+    "sendTemplate": "Enviar modelo",
+    "descriptionSelected": "Preencha os campos para renderizar este modelo. A Meta exige que toda variável seja definida.",
+    "descriptionList": "Escolha um modelo aprovado do WhatsApp para enviar a este contato.",
+    "noApproved": "Nenhum modelo aprovado",
+    "noApprovedHint": "Aprove um modelo no Meta WhatsApp Manager e depois sincronize em Configurações → Modelos.",
+    "preview": "Prévia",
+    "headerVar": "Cabeçalho {token}",
+    "headerPlaceholder": "Valor para a variável do cabeçalho",
+    "bodyVar": "Corpo {token}",
+    "bodyPlaceholder": "Valor para {token}",
+    "urlButtonLabel": "Botão de URL \"{text}\" — valor para {token}",
+    "urlButtonPlaceholder": "Valor do sufixo da URL",
+    "finalUrl": "URL final: {url}",
+    "back": "Voltar",
+    "cancel": "Cancelar"
+  },
+  "page": {
+    "whatsappNotConnected": "O WhatsApp® não está conectado. Vá para Configurações para conectar sua conta."
+  }
+}

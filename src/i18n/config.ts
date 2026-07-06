@@ -37,4 +37,13 @@ export const NAMESPACES = [
   'common',
   'auth',
   'settings',
+  'inbox',
+  'contacts',
+  'dashboard',
+  'pipelines',
+  'broadcasts',
+  'automations',
+  'flows',
+  'notifications',
+  'layout',
 ] as const

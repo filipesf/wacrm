@@ -25,11 +25,19 @@ export function useFormat() {
   const locale = useLocale();
 
   return {
-    // Signatures inherited from next-intl so option types stay in sync.
-    date: (...args: Parameters<typeof format.dateTime>) =>
-      format.dateTime(...args),
-    number: (...args: Parameters<typeof format.number>) =>
-      format.number(...args),
+    // Accept an `Intl` options object directly — the form used across
+    // the app (e.g. `fmt.date(d, { dateStyle: 'medium' })`). next-intl's
+    // `dateTime`/`number` are overloaded; spreading `Parameters<…>` picks
+    // the trailing string-format overload, which rejects the options
+    // object, so we type these explicitly instead.
+    date: (
+      value: Date | number,
+      options?: Parameters<typeof format.dateTime>[2],
+    ) => format.dateTime(value, options),
+    number: (
+      value: number | bigint,
+      options?: Parameters<typeof format.number>[2],
+    ) => format.number(value, options),
     relativeTime: (...args: Parameters<typeof format.relativeTime>) =>
       format.relativeTime(...args),
     currency: (value: number, currency: string = DEFAULT_CURRENCY) =>

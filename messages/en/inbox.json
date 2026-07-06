@@ -1,0 +1,158 @@
+{
+  "sidebar": {
+    "selectConversation": "Select a conversation",
+    "tags": "Tags",
+    "noTags": "No tags",
+    "activeDeals": "Active Deals",
+    "noDeals": "No deals",
+    "notes": "Notes",
+    "addNotePlaceholder": "Add a note..."
+  },
+  "list": {
+    "searchPlaceholder": "Search conversations...",
+    "filters": {
+      "all": "All",
+      "unread": "Unread",
+      "open": "Open",
+      "pending": "Pending",
+      "closed": "Closed"
+    },
+    "tags": "Tags",
+    "company": "Company",
+    "allCompanies": "All companies",
+    "tagFallback": "Tag",
+    "clearAll": "Clear all",
+    "empty": "No conversations found",
+    "unknownContact": "Unknown",
+    "noMessages": "No messages yet",
+    "statuses": {
+      "open": "Open",
+      "pending": "Pending",
+      "closed": "Closed"
+    }
+  },
+  "actions": {
+    "nothingToCopy": "Nothing to copy",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "react": "React",
+    "reactWith": "React with {emoji}",
+    "reply": "Reply",
+    "copy": "Copy"
+  },
+  "bubble": {
+    "media": {
+      "image": "Image",
+      "video": "Video",
+      "audio": "Audio",
+      "document": "Document"
+    },
+    "mediaUnavailable": "{label} unavailable",
+    "sharedImage": "Shared image",
+    "template": "Template",
+    "locationShared": "Location shared",
+    "buttonReply": "Button reply",
+    "interactiveReply": "[Interactive reply]",
+    "unsupported": "[Unsupported message type]"
+  },
+  "composer": {
+    "kinds": {
+      "image": "image",
+      "video": "video",
+      "document": "document",
+      "audio": "audio"
+    },
+    "fileTooLarge": "File is {size} MB — {kind} limit is {limit} MB.",
+    "uploadFailed": "Upload failed.",
+    "recordingTooLong": "Recording is too long (over 16 MB).",
+    "recordingUnsupported": "Voice recording isn't supported in this browser.",
+    "microphoneDenied": "Microphone access denied or unavailable.",
+    "sessionExpiredBanner": "24-hour session expired. Use a template to re-engage.",
+    "templates": "Templates",
+    "recording": "Recording… {current} / {max}",
+    "cancel": "Cancel",
+    "stopAndAttach": "Stop and attach",
+    "attachReadOnly": "Read-only — your role can't send messages",
+    "attachMedia": "Attach media",
+    "photo": "Photo",
+    "video": "Video",
+    "document": "Document",
+    "voiceNote": "Voice note",
+    "sendTemplate": "Send template",
+    "placeholderReadOnly": "Read-only — viewers can browse but not reply",
+    "placeholderExpired": "Session expired - use a template",
+    "placeholderDefault": "Type a message... (Shift+Enter for new line)",
+    "quickRepliesHint": "Type '/' for quick replies",
+    "removeAttachment": "Remove attachment",
+    "captionPlaceholder": "Add a caption…"
+  },
+  "thread": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "statuses": {
+      "open": "Open",
+      "pending": "Pending",
+      "closed": "Closed"
+    },
+    "noCustomerMessages": "No customer messages",
+    "expired": "Expired",
+    "hoursRemaining": "{hours}h remaining",
+    "minutesRemaining": "{minutes}m remaining",
+    "failedToSend": "Failed to send: {reason}",
+    "failedToSendTemplate": "Failed to send template: {reason}",
+    "waitForSend": "Wait for the message to finish sending",
+    "reactionFailed": "Reaction failed: {reason}",
+    "assignmentFailed": "Failed to update assignment",
+    "you": "You",
+    "customer": "Customer",
+    "emptyTitle": "Select a conversation",
+    "emptyDescription": "Choose a conversation from the left to start messaging",
+    "backToConversations": "Back to conversations",
+    "hideContactPanel": "Hide contact panel",
+    "showContactPanel": "Show contact panel",
+    "hideContact": "Hide contact",
+    "showContact": "Show contact",
+    "refreshConversation": "Refresh conversation",
+    "refresh": "Refresh",
+    "status": "Status",
+    "assigned": "Assigned",
+    "assign": "Assign",
+    "noTeammates": "No teammates available",
+    "nameMe": "{name} (me)",
+    "unassign": "Unassign",
+    "noMessagesTitle": "No messages yet",
+    "noMessagesDescription": "Send a template to start the conversation"
+  },
+  "reply": {
+    "cancelReply": "Cancel reply",
+    "preview": {
+      "image": "[Image]",
+      "video": "[Video]",
+      "audio": "[Audio]",
+      "document": "[Document]",
+      "location": "[Location]",
+      "template": "[Template]",
+      "message": "[Message]"
+    }
+  },
+  "templates": {
+    "sendTemplate": "Send template",
+    "descriptionSelected": "Fill in the placeholders to render this template. Meta requires every variable to be set.",
+    "descriptionList": "Pick an approved WhatsApp template to send to this contact.",
+    "noApproved": "No approved templates",
+    "noApprovedHint": "Approve a template in Meta WhatsApp Manager, then sync it from Settings → Templates.",
+    "preview": "Preview",
+    "headerVar": "Header {token}",
+    "headerPlaceholder": "Value for the header variable",
+    "bodyVar": "Body {token}",
+    "bodyPlaceholder": "Value for {token}",
+    "urlButtonLabel": "URL button \"{text}\" — value for {token}",
+    "urlButtonPlaceholder": "URL suffix value",
+    "finalUrl": "Final URL: {url}",
+    "back": "Back",
+    "cancel": "Cancel"
+  },
+  "page": {
+    "whatsappNotConnected": "WhatsApp® is not connected. Go to Settings to connect your account."
+  }
+}

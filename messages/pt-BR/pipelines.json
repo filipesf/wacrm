@@ -1,0 +1,122 @@
+{
+  "header": {
+    "selectPipeline": "Selecionar funil",
+    "noPipelines": "Nenhum funil ainda",
+    "managePipelines": "Gerenciar funis",
+    "addPipeline": "Adicionar funil",
+    "addDeal": "Adicionar negócio"
+  },
+  "empty": {
+    "title": "Nenhum funil ainda",
+    "description": "Crie um funil para começar a acompanhar negócios",
+    "createPipeline": "Criar funil"
+  },
+  "newPipeline": {
+    "title": "Novo funil",
+    "nameLabel": "Nome do funil",
+    "namePlaceholder": "ex.: Vendas Enterprise",
+    "hint": "As etapas padrão (New Lead → Won) serão criadas automaticamente.",
+    "cancel": "Cancelar",
+    "create": "Criar funil",
+    "creating": "Criando..."
+  },
+  "board": {
+    "dropHere": "Solte um negócio aqui",
+    "addDeal": "Adicionar negócio"
+  },
+  "card": {
+    "noContact": "Sem contato",
+    "won": "Ganho",
+    "lost": "Perdido"
+  },
+  "analytics": {
+    "totalDeals": "Total de negócios",
+    "pipelineValue": "Valor do funil",
+    "avgDealSize": "Ticket médio",
+    "weightedValue": "Valor ponderado",
+    "wonThisMonth": "Ganhos no mês",
+    "lostThisMonth": "Perdidos no mês",
+    "howCalculated": "Como {label} é calculado",
+    "tooltips": {
+      "totalDeals": "Contagem de todos os negócios deste funil que não estão marcados como Perdido. Negócios ganhos também são incluídos.",
+      "pipelineValue": "Soma dos valores de todos os negócios deste funil, excluindo os marcados como Perdido.",
+      "avgDealSize": "Valor do funil dividido pelo total de negócios — o valor médio de um único negócio não perdido.",
+      "weightedValue": "Receita esperada: o valor de cada negócio aberto × a probabilidade da sua etapa. Primeira etapa ≈ 10%, as etapas avançam até 90%, Ganho = 100%. Negócios perdidos são excluídos.",
+      "wonThisMonth": "Negócios marcados como Ganho desde o primeiro dia do mês atual.",
+      "lostThisMonth": "Negócios marcados como Perdido desde o primeiro dia do mês atual."
+    }
+  },
+  "form": {
+    "editTitle": "Editar negócio",
+    "newTitle": "Novo negócio",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Título do negócio",
+    "contactLabel": "Contato",
+    "selectContact": "Selecione um contato",
+    "linkConversation": "Vincular à conversa",
+    "valueLabel": "Valor",
+    "valuePlaceholder": "0",
+    "currencyLabel": "Moeda",
+    "expectedCloseLabel": "Data prevista de fechamento",
+    "stageLabel": "Etapa",
+    "assignedToLabel": "Responsável",
+    "unassigned": "Não atribuído",
+    "notesLabel": "Notas",
+    "notesPlaceholder": "Adicionar notas...",
+    "statusLabel": "Status",
+    "markWon": "Marcar como ganho",
+    "markLost": "Marcar como perdido",
+    "reopen": "Reabrir negócio",
+    "cancel": "Cancelar",
+    "saving": "Salvando...",
+    "saveChanges": "Salvar alterações",
+    "createDeal": "Criar negócio",
+    "confirmDelete": "Excluir este negócio?",
+    "deleting": "Excluindo...",
+    "confirm": "Confirmar",
+    "deleteDeal": "Excluir negócio"
+  },
+  "settings": {
+    "title": "Gerenciar funil",
+    "deleteTitle": "Excluir funil",
+    "deleteWarning": "Isto vai arquivar todos os negócios deste funil. Não é possível desfazer.",
+    "cancel": "Cancelar",
+    "deleting": "Excluindo...",
+    "deletePipeline": "Excluir funil",
+    "nameLabel": "Nome do funil",
+    "stagesLabel": "Etapas",
+    "pickColor": "Escolher a cor {color}",
+    "changeColor": "Alterar cor",
+    "dragToReorder": "Arraste para reordenar",
+    "newStagePlaceholder": "Nome da nova etapa",
+    "add": "Adicionar",
+    "createNewPipeline": "Criar um novo funil",
+    "saving": "Salvando...",
+    "saveChanges": "Salvar alterações"
+  },
+  "toasts": {
+    "profileNotLinked": "Seu perfil não está vinculado a uma conta.",
+    "pipelineCreated": "Funil criado",
+    "pipelineCreateFailed": "Não foi possível criar o funil",
+    "dealMoveFailed": "Não foi possível mover o negócio",
+    "dealFieldsRequired": "Título, contato e etapa são obrigatórios",
+    "dealSaveFailed": "Não foi possível salvar o negócio",
+    "notSignedIn": "Você não está conectado",
+    "dealCreateFailed": "Não foi possível criar o negócio",
+    "dealUpdated": "Negócio atualizado",
+    "dealCreated": "Negócio criado",
+    "dealStatusFailed": "Não foi possível atualizar o status do negócio",
+    "markedWon": "Marcado como ganho",
+    "markedLost": "Marcado como perdido",
+    "dealReopened": "Negócio reaberto",
+    "dealDeleteFailed": "Não foi possível excluir o negócio",
+    "dealDeleted": "Negócio excluído",
+    "pipelineSaveFailed": "Não foi possível salvar o funil",
+    "pipelineSaved": "Funil salvo",
+    "stageAddFailed": "Não foi possível adicionar a etapa",
+    "stageHasDeals": "Mova ou exclua os negócios desta etapa primeiro",
+    "stageDeleteFailed": "Não foi possível excluir a etapa",
+    "pipelineDeleteFailed": "Não foi possível excluir o funil",
+    "pipelineDeleted": "Funil excluído"
+  }
+}

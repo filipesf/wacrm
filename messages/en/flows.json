@@ -1,0 +1,266 @@
+{
+  "status": {
+    "draft": "Draft",
+    "active": "Active",
+    "archived": "Archived"
+  },
+  "categories": {
+    "messaging": "Messaging",
+    "logic": "Logic & data",
+    "flow": "Flow control"
+  },
+  "nodes": {
+    "start": { "label": "Start", "blurb": "Entry point of the flow" },
+    "send_message": { "label": "Send message", "blurb": "Sends a WhatsApp text message" },
+    "send_buttons": { "label": "Send buttons", "blurb": "Sends quick-reply buttons" },
+    "send_list": { "label": "Send list", "blurb": "Sends a tappable list of options" },
+    "send_media": { "label": "Send media", "blurb": "Sends an image, video, or document" },
+    "collect_input": { "label": "Collect input", "blurb": "Asks a question, saves the reply" },
+    "condition": { "label": "If / else", "blurb": "Branches on a rule" },
+    "set_tag": { "label": "Tag contact", "blurb": "Adds or removes a contact tag" },
+    "handoff": { "label": "Handoff to agent", "blurb": "Hands the conversation to a human" },
+    "end": { "label": "End", "blurb": "Ends the flow" }
+  },
+  "summary": {
+    "options": "{count, plural, one {# option} other {# options}}",
+    "optionsAcrossSections": "{optionCount, plural, one {# option} other {# options}} across {sectionCount, plural, one {# section} other {# sections}}",
+    "media": {
+      "image": "Image",
+      "video": "Video",
+      "document": "Document",
+      "generic": "Media",
+      "noFile": "{label} (no file uploaded)"
+    },
+    "condition": {
+      "hasTag": "has tag {tag}",
+      "subjectVar": "var",
+      "subjectField": "field",
+      "opEquals": "==",
+      "opContains": "contains",
+      "opPresent": "exists",
+      "opAbsent": "missing"
+    },
+    "setTag": {
+      "add": "Add tag {id}…",
+      "remove": "Remove tag {id}…",
+      "addNone": "Add tag (none picked)",
+      "removeNone": "Remove tag (none picked)"
+    }
+  },
+  "list": {
+    "title": "Flows",
+    "beta": "Beta",
+    "subtitle": "Build branching, button-driven WhatsApp conversations. Useful for menus, FAQs, and triage before a human steps in.",
+    "newFlow": "New flow",
+    "loadError": "Couldn't load flows.",
+    "createError": "Couldn't create flow.",
+    "cloneError": "Clone failed",
+    "deleteConfirm": "Delete \"{name}\"? Any active runs will end immediately.",
+    "deleted": "Flow deleted.",
+    "deleteError": "Couldn't delete flow.",
+    "runs": "{count, plural, one {# run} other {# runs}}",
+    "edit": "Edit",
+    "delete": "Delete",
+    "empty": {
+      "title": "No flows yet",
+      "body": "Build your first conversation — a welcome menu, an order lookup, an FAQ bot. Customers tap buttons; the bot routes them to the right answer (or the right agent).",
+      "cta": "Create your first flow"
+    },
+    "trigger": {
+      "keywordNone": "Triggers on keyword (none set)",
+      "keyword": "Triggers on: {keywords}",
+      "firstInbound": "Triggers on a contact's first-ever inbound message",
+      "manual": "Manual trigger"
+    },
+    "dialog": {
+      "title": "Create a new flow",
+      "description": "Start from a template or build from scratch.",
+      "fromTemplate": "Start from a template",
+      "nodeCount": "{count, plural, one {# node} other {# nodes}}",
+      "orBlank": "Or start blank",
+      "namePlaceholder": "e.g. Welcome menu",
+      "cancel": "Cancel",
+      "createBlank": "Create blank flow"
+    }
+  },
+  "editor": {
+    "loadError": "Couldn't load flow.",
+    "notFound": "Flow not found.",
+    "backToFlows": "← Back to flows"
+  },
+  "header": {
+    "back": "Back to Flows",
+    "namePlaceholder": "Flow name",
+    "nameAria": "Flow name",
+    "editedTitle": "Unsaved changes — hit Save to persist",
+    "edited": "Edited",
+    "runs": "Runs",
+    "delete": "Delete",
+    "pause": "Pause",
+    "activate": "Activate",
+    "activateBlocked": "Fix the issues below before activating",
+    "save": "Save",
+    "descriptionPlaceholder": "Add a short description (internal — customers don't see this)",
+    "descriptionAria": "Flow description",
+    "deleteConfirm": "Delete \"{name}\"? Any active runs end immediately. This can't be undone.",
+    "saved": "Saved.",
+    "saveFailed": "Save failed",
+    "activateFailed": "Fix the issues below before activating.",
+    "statusFailed": "Status update failed",
+    "flowActivated": "Flow activated.",
+    "archived": "Archived.",
+    "savedDraft": "Saved as draft.",
+    "deleteFailed": "Delete failed"
+  },
+  "shell": {
+    "viewAria": "Editor view",
+    "canvas": "Canvas",
+    "list": "List"
+  },
+  "builder": {
+    "keywordsPlaceholder": "support, help, hi",
+    "trigger": {
+      "heading": "Trigger",
+      "when": "When…",
+      "keyword": "A message contains a keyword",
+      "firstInbound": "Customer's first ever inbound message",
+      "manual": "Manual only (no auto-trigger)",
+      "keywordsLabel": "Keywords (comma-separated)"
+    },
+    "entry": {
+      "label": "Entry node:",
+      "placeholder": "Pick the first node…"
+    },
+    "nodes": {
+      "heading": "Nodes ({count})",
+      "empty": "Add a <b>Start</b> node, then a <b>Send buttons</b> node, then a <b>Handoff</b> — that's the welcome-menu shape from the brief."
+    },
+    "card": {
+      "entry": "Entry",
+      "setEntry": "Set as entry",
+      "remove": "Remove node",
+      "showAdvanced": "Show advanced",
+      "hideAdvanced": "Hide advanced",
+      "nodeKeyLabel": "Node key (internal identifier — keep stable for analytics)",
+      "replyIdsNote": "Reply IDs for each option are shown inline above. They're returned by WhatsApp when a customer taps; you usually don't need to touch them."
+    },
+    "addNode": "Add node"
+  },
+  "canvas": {
+    "entry": "Entry",
+    "empty": "No nodes yet.",
+    "setEntry": "Set as entry",
+    "deleteNode": "Delete node",
+    "addNode": "Add node"
+  },
+  "forms": {
+    "pickNextNode": "Pick a next node…",
+    "none": "— None —",
+    "nextNodePlaceholder": "Next node…",
+    "advancesTo": "Advances to",
+    "sendMessage": {
+      "text": "Text sent to the customer"
+    },
+    "collectInput": {
+      "prompt": "Prompt sent to the customer",
+      "varKeyLabel": "Variable key (stored in flow_runs.vars; alphanumeric + underscore)",
+      "varKeyPlaceholder": "e.g. name, email, company",
+      "interpolateHint": "Interpolate in downstream prompts and handoff notes with <code>{token}</code>.",
+      "afterCapture": "After capturing, advance to"
+    },
+    "handoff": {
+      "note": "Internal note (for the agent picking up)"
+    },
+    "end": "Terminal node. When the runner reaches this node the run is marked complete. No config needed.",
+    "buttons": {
+      "body": "Body text",
+      "footer": "Footer (optional, 60 chars)",
+      "buttonsLabel": "Buttons (1–3) — each one routes to a different next node",
+      "titlePlaceholder": "Visible title (≤20 chars)",
+      "addButton": "Add button"
+    },
+    "list": {
+      "body": "Body text",
+      "buttonLabel": "Tap-to-expand button label (≤20 chars)",
+      "footer": "Footer (optional, 60 chars)",
+      "rowsLabel": "Rows (1–10 total across all sections)",
+      "sectionTitlePlaceholder": "Section {number} title (optional)",
+      "removeSection": "Remove section",
+      "rowTitlePlaceholder": "Row title (≤24)",
+      "addRow": "Add row",
+      "addSection": "Add section"
+    },
+    "condition": {
+      "if": "If",
+      "subjectVar": "Captured variable",
+      "subjectTag": "Contact has tag",
+      "subjectField": "Contact field",
+      "varName": "var name",
+      "tag": "Tag",
+      "field": "Field",
+      "pickTag": "Pick a tag…",
+      "pickField": "Pick a field…",
+      "varKeyPlaceholder": "e.g. email",
+      "tagUuidPlaceholder": "tag UUID",
+      "operator": "Operator",
+      "opPresent": "is present",
+      "opAbsent": "is absent",
+      "opEquals": "equals",
+      "opContains": "contains",
+      "value": "Value",
+      "trueNext": "If true → advance to",
+      "falseNext": "If false → advance to"
+    },
+    "setTag": {
+      "action": "Action",
+      "add": "Add tag",
+      "remove": "Remove tag",
+      "tag": "Tag",
+      "pickTag": "Pick a tag…",
+      "tagUuidPlaceholder": "Tag UUID",
+      "thenAdvance": "Then advance to"
+    },
+    "media": {
+      "type": "Media type",
+      "image": "Image (PNG, JPEG, WebP)",
+      "video": "Video (MP4, 3GP)",
+      "document": "Document (PDF, Word, Excel, PowerPoint, TXT)",
+      "file": "File",
+      "removeFile": "Remove file",
+      "uploading": "Uploading…",
+      "upload": "Click to upload (max 16 MB)",
+      "tooLarge": "File is {size} MB — limit is 16 MB.",
+      "uploaded": "File uploaded.",
+      "uploadFailed": "Upload failed.",
+      "caption": "Caption (optional, shown under the media)",
+      "filenameLabel": "Filename shown to the customer (documents only)",
+      "filenamePlaceholder": "invoice.pdf",
+      "afterSending": "After sending, advance to"
+    }
+  },
+  "validation": {
+    "ready": "No issues. Ready to activate.",
+    "summary": "{errors, plural, one {# error} other {# errors}}, {warnings, plural, one {# warning} other {# warnings}}",
+    "jumpTo": "Jump to node {key}"
+  },
+  "runs": {
+    "loadError": "Couldn't load runs.",
+    "title": "Runs",
+    "subtitle": "The 50 most recent times this flow ran. Expand a row to see the engine's per-step log.",
+    "empty": "No runs yet. Trigger the flow from a personal WhatsApp number to see it appear here.",
+    "status": {
+      "active": "Active",
+      "completed": "Completed",
+      "handed_off": "Handed off",
+      "timed_out": "Timed out",
+      "paused_by_agent": "Paused by agent",
+      "failed": "Failed"
+    },
+    "unknownContact": "Unknown contact",
+    "at": "at {key}",
+    "started": "Started {date}",
+    "reprompts": "{count, plural, one {# re-prompt} other {# re-prompts}}",
+    "capturedVars": "Captured vars ({count})",
+    "noEvents": "No events recorded for this run."
+  }
+}

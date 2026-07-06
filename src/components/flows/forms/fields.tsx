@@ -18,6 +18,8 @@
  * (introduced in this PR) mount the exact same form components.
  */
 
+import { useTranslations } from "next-intl";
+
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -75,6 +77,7 @@ export function NextNodeRow({
   onChange: (v: string) => void;
   label: string;
 }) {
+  const t = useTranslations("flows");
   return (
     <div>
       <label className="mb-1 block text-xs text-muted-foreground">{label}</label>
@@ -83,7 +86,7 @@ export function NextNodeRow({
         nodes={allNodes}
         excludeKey={currentKey}
         onChange={(v) => onChange(v ?? "")}
-        placeholder="Pick a next node…"
+        placeholder={t("forms.pickNextNode")}
       />
     </div>
   );
@@ -104,6 +107,7 @@ export function NodeKeySelect({
   placeholder?: string;
   className?: string;
 }) {
+  const t = useTranslations("flows");
   const options = nodes.filter((n) => n.node_key !== excludeKey);
   return (
     <Select
@@ -114,7 +118,7 @@ export function NodeKeySelect({
         <SelectValue placeholder={placeholder ?? "—"} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="__none__">— None —</SelectItem>
+        <SelectItem value="__none__">{t("forms.none")}</SelectItem>
         {options.map((n) => {
           const Icon = NODE_META[n.node_type].icon;
           return (

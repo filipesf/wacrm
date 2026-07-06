@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "inbox": "Inbox",
+    "notifications": "Notifications",
+    "contacts": "Contacts",
+    "pipelines": "Pipelines",
+    "broadcasts": "Broadcasts",
+    "automations": "Automations",
+    "flows": "Flows",
+    "settings": "Settings",
+    "primaryLabel": "Primary",
+    "beta": "Beta",
+    "betaFeature": "Beta feature",
+    "unreadConversations": "{count, plural, one {# unread conversation} other {# unread conversations}}",
+    "unreadNotifications": "{count, plural, one {# unread notification} other {# unread notifications}}"
+  },
+  "roles": {
+    "owner": "Owner",
+    "admin": "Admin",
+    "agent": "Agent",
+    "viewer": "Viewer"
+  },
+  "userMenu": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "openMenu": "Open account menu",
+    "userFallback": "User",
+    "avatarAlt": "Avatar"
+  },
+  "shell": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "modeToggle": {
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
+  }
+}

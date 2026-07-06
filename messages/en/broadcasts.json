@@ -1,0 +1,240 @@
+{
+  "list": {
+    "title": "Broadcasts",
+    "subtitle": "Send bulk messages to your contacts using approved templates.",
+    "new": "New Broadcast",
+    "loadError": "Failed to load broadcasts",
+    "retry": "Retry",
+    "progressAria": "Broadcast in progress",
+    "empty": {
+      "title": "No broadcasts yet",
+      "description": "Create your first broadcast to reach your contacts at scale."
+    },
+    "columns": {
+      "name": "Name",
+      "template": "Template",
+      "recipients": "Recipients",
+      "delivery": "Delivery",
+      "read": "Read",
+      "status": "Status",
+      "date": "Date"
+    }
+  },
+  "wizard": {
+    "title": "New Broadcast",
+    "subtitle": "Create and send a broadcast message to your contacts.",
+    "steps": {
+      "template": "Template",
+      "audience": "Audience",
+      "personalize": "Personalize",
+      "send": "Send"
+    },
+    "toast": {
+      "failed": "Broadcast failed",
+      "nameRequired": "Give the broadcast a name before saving a draft.",
+      "notSignedIn": "Not signed in.",
+      "noAccount": "Your profile is not linked to an account.",
+      "draftError": "Failed to save draft: {message}",
+      "draftSaved": "Draft saved"
+    }
+  },
+  "step1": {
+    "title": "Choose a Template",
+    "subtitle": "Select an approved message template for your broadcast.",
+    "loadError": "Failed to load templates",
+    "empty": {
+      "title": "No templates available.",
+      "description": "Create a template in Settings first."
+    },
+    "back": "Back",
+    "next": "Next"
+  },
+  "step2": {
+    "title": "Select Audience",
+    "subtitle": "Choose who will receive this broadcast.",
+    "options": {
+      "all": {
+        "label": "All Contacts",
+        "description": "Send to every contact in your database"
+      },
+      "tags": {
+        "label": "Filter by Tags",
+        "description": "Target contacts with specific tags"
+      },
+      "customField": {
+        "label": "Custom Field",
+        "description": "Filter by a custom field value"
+      },
+      "csv": {
+        "label": "Upload CSV",
+        "description": "Upload a list of phone numbers"
+      }
+    },
+    "operators": {
+      "is": "is",
+      "isNot": "is not",
+      "contains": "contains"
+    },
+    "tags": {
+      "title": "Select Tags",
+      "empty": "No tags found. Create tags in Settings."
+    },
+    "customField": {
+      "title": "Custom Field Filter",
+      "empty": "No custom fields defined. Create one in Settings → Custom Fields.",
+      "selectField": "Select field…",
+      "valuePlaceholder": "Value"
+    },
+    "exclude": {
+      "title": "Exclude contacts with these tags",
+      "optional": "(optional)",
+      "empty": "No tags available."
+    },
+    "summary": {
+      "title": "Audience Summary",
+      "calculating": "Calculating…",
+      "estimated": "estimated recipients",
+      "hint": "Select an audience type to see the estimate."
+    },
+    "back": "Back",
+    "next": "Next"
+  },
+  "step3": {
+    "title": "Personalize Message",
+    "subtitle": "Map template variables to contact fields, custom fields, or static values.",
+    "header": {
+      "title": "Header media",
+      "types": {
+        "image": "image",
+        "video": "video",
+        "document": "document"
+      },
+      "urlLabel": "Media URL",
+      "urlPlaceholder": "https://example.com/header.{ext}",
+      "description": "Public URL of the {type} sent as the message header. Used for every recipient in this broadcast.",
+      "previewAlt": "Header preview",
+      "errorMissing": "A media URL is required to send this template.",
+      "errorInvalid": "Enter a valid http(s) URL."
+    },
+    "noVariables": "This template has no variables to personalize.",
+    "mappingType": "Mapping Type",
+    "valueLabel": "Value",
+    "fieldLabel": "Field",
+    "mapping": {
+      "static": "Static Value",
+      "field": "Contact Field",
+      "customField": "Custom Field"
+    },
+    "valuePlaceholder": "Enter value...",
+    "selectField": "Select field...",
+    "loading": "Loading…",
+    "noCustomFields": "No custom fields",
+    "selectCustomField": "Select custom field…",
+    "contactFields": {
+      "name": "Contact Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "company": "Company"
+    },
+    "preview": {
+      "title": "Live Preview",
+      "sampleData": "sample data"
+    },
+    "unmapped": {
+      "prefix": "Map every placeholder before continuing — still missing ",
+      "suffix": ". Otherwise those placeholders will ship to Meta as empty strings."
+    },
+    "back": "Back",
+    "next": "Next"
+  },
+  "step4": {
+    "title": "Review & Send",
+    "subtitle": "Name your broadcast, review the details, and send.",
+    "nameLabel": "Broadcast Name",
+    "namePlaceholder": "e.g. Summer Sale Announcement",
+    "summary": {
+      "title": "Summary",
+      "template": "Template",
+      "audience": "Audience",
+      "reach": "Estimated Reach",
+      "language": "Language"
+    },
+    "audienceLabel": {
+      "all": "All Contacts",
+      "tags": "Tags ({count} selected)",
+      "csv": "CSV Upload",
+      "custom": "Custom"
+    },
+    "sending": "Sending broadcast...",
+    "saveDraft": "Save as Draft",
+    "send": "Send Broadcast",
+    "back": "Back",
+    "confirm": {
+      "title": "Confirm Broadcast",
+      "description": "You are about to send this broadcast to <strong>{count, number}</strong> {count, plural, one {contact} other {contacts}} using the <strong>{name}</strong> template. This action cannot be undone.",
+      "cancel": "Cancel",
+      "send": "Confirm & Send"
+    }
+  },
+  "detail": {
+    "loadError": "Failed to load broadcast",
+    "notFound": "Broadcast not found",
+    "back": "Back to Broadcasts",
+    "templateLabel": "Template: {name}",
+    "created": "Created {date}",
+    "delete": {
+      "action": "Delete",
+      "confirm": "Delete this broadcast?",
+      "cancel": "Cancel",
+      "confirmButton": "Confirm",
+      "deleting": "Deleting…",
+      "tooltipDisabled": "Cannot delete while a broadcast is actively sending",
+      "tooltip": "Delete this broadcast",
+      "success": "Broadcast deleted",
+      "error": "Failed to delete: {message}"
+    },
+    "stats": {
+      "total": "Total Recipients",
+      "sent": "Sent",
+      "delivered": "Delivered",
+      "read": "Read",
+      "replied": "Replied",
+      "failed": "Failed"
+    },
+    "funnel": {
+      "title": "Funnel",
+      "sent": "Sent",
+      "delivered": "Delivered",
+      "read": "Read",
+      "replied": "Replied"
+    },
+    "recipients": {
+      "heading": "Recipients ({count})",
+      "headingFiltered": "Recipients ({count} of {total})",
+      "allStatuses": "All statuses",
+      "exportCsv": "Export CSV",
+      "emptyNone": "No recipients found.",
+      "emptyFilter": "No recipients match this filter.",
+      "columns": {
+        "contact": "Contact",
+        "phone": "Phone",
+        "status": "Status",
+        "sent": "Sent",
+        "delivered": "Delivered",
+        "read": "Read",
+        "error": "Error"
+      },
+      "unknown": "Unknown"
+    },
+    "csv": {
+      "contact": "Contact",
+      "phone": "Phone",
+      "status": "Status",
+      "sentAt": "Sent At",
+      "deliveredAt": "Delivered At",
+      "readAt": "Read At",
+      "repliedAt": "Replied At",
+      "error": "Error"
+    }
+  }
+}

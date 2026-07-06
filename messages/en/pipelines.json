@@ -1,0 +1,122 @@
+{
+  "header": {
+    "selectPipeline": "Select pipeline",
+    "noPipelines": "No pipelines yet",
+    "managePipelines": "Manage pipelines",
+    "addPipeline": "Add pipeline",
+    "addDeal": "Add deal"
+  },
+  "empty": {
+    "title": "No pipelines yet",
+    "description": "Create a pipeline to start tracking deals",
+    "createPipeline": "Create pipeline"
+  },
+  "newPipeline": {
+    "title": "New pipeline",
+    "nameLabel": "Pipeline name",
+    "namePlaceholder": "e.g., Enterprise Sales",
+    "hint": "Default stages (New Lead → Won) will be created automatically.",
+    "cancel": "Cancel",
+    "create": "Create pipeline",
+    "creating": "Creating..."
+  },
+  "board": {
+    "dropHere": "Drop a deal here",
+    "addDeal": "Add deal"
+  },
+  "card": {
+    "noContact": "No contact",
+    "won": "Won",
+    "lost": "Lost"
+  },
+  "analytics": {
+    "totalDeals": "Total deals",
+    "pipelineValue": "Pipeline value",
+    "avgDealSize": "Avg deal size",
+    "weightedValue": "Weighted value",
+    "wonThisMonth": "Won this month",
+    "lostThisMonth": "Lost this month",
+    "howCalculated": "How {label} is calculated",
+    "tooltips": {
+      "totalDeals": "Count of every deal in this pipeline that isn't marked as Lost. Won deals are still included.",
+      "pipelineValue": "Sum of the values of all deals in this pipeline, excluding deals marked as Lost.",
+      "avgDealSize": "Pipeline value divided by total deals — the average value of a single non-lost deal.",
+      "weightedValue": "Expected revenue: each open deal's value × its stage probability. First stage ≈ 10%, stages progress up to 90%, Won = 100%. Lost deals are excluded.",
+      "wonThisMonth": "Deals marked as Won since the first day of the current month.",
+      "lostThisMonth": "Deals marked as Lost since the first day of the current month."
+    }
+  },
+  "form": {
+    "editTitle": "Edit deal",
+    "newTitle": "New deal",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Deal title",
+    "contactLabel": "Contact",
+    "selectContact": "Select a contact",
+    "linkConversation": "Link to conversation",
+    "valueLabel": "Value",
+    "valuePlaceholder": "0",
+    "currencyLabel": "Currency",
+    "expectedCloseLabel": "Expected close date",
+    "stageLabel": "Stage",
+    "assignedToLabel": "Assigned to",
+    "unassigned": "Unassigned",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Add notes...",
+    "statusLabel": "Status",
+    "markWon": "Mark as won",
+    "markLost": "Mark as lost",
+    "reopen": "Reopen deal",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saveChanges": "Save changes",
+    "createDeal": "Create deal",
+    "confirmDelete": "Delete this deal?",
+    "deleting": "Deleting...",
+    "confirm": "Confirm",
+    "deleteDeal": "Delete deal"
+  },
+  "settings": {
+    "title": "Manage pipeline",
+    "deleteTitle": "Delete pipeline",
+    "deleteWarning": "This will archive all deals in this pipeline. This cannot be undone.",
+    "cancel": "Cancel",
+    "deleting": "Deleting...",
+    "deletePipeline": "Delete pipeline",
+    "nameLabel": "Pipeline name",
+    "stagesLabel": "Stages",
+    "pickColor": "Pick color {color}",
+    "changeColor": "Change color",
+    "dragToReorder": "Drag to reorder",
+    "newStagePlaceholder": "New stage name",
+    "add": "Add",
+    "createNewPipeline": "Create a new pipeline",
+    "saving": "Saving...",
+    "saveChanges": "Save changes"
+  },
+  "toasts": {
+    "profileNotLinked": "Your profile is not linked to an account.",
+    "pipelineCreated": "Pipeline created",
+    "pipelineCreateFailed": "Failed to create pipeline",
+    "dealMoveFailed": "Failed to move deal",
+    "dealFieldsRequired": "Title, contact, and stage are required",
+    "dealSaveFailed": "Failed to save deal",
+    "notSignedIn": "Not signed in",
+    "dealCreateFailed": "Failed to create deal",
+    "dealUpdated": "Deal updated",
+    "dealCreated": "Deal created",
+    "dealStatusFailed": "Failed to update deal status",
+    "markedWon": "Marked as won",
+    "markedLost": "Marked as lost",
+    "dealReopened": "Deal reopened",
+    "dealDeleteFailed": "Failed to delete deal",
+    "dealDeleted": "Deal deleted",
+    "pipelineSaveFailed": "Failed to save pipeline",
+    "pipelineSaved": "Pipeline saved",
+    "stageAddFailed": "Failed to add stage",
+    "stageHasDeals": "Move or delete deals in this stage first",
+    "stageDeleteFailed": "Failed to delete stage",
+    "pipelineDeleteFailed": "Failed to delete pipeline",
+    "pipelineDeleted": "Pipeline deleted"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "dashboard": "Painel",
+    "inbox": "Caixa de entrada",
+    "notifications": "Notificações",
+    "contacts": "Contatos",
+    "pipelines": "Funis",
+    "broadcasts": "Transmissões",
+    "automations": "Automações",
+    "flows": "Fluxos",
+    "settings": "Configurações",
+    "primaryLabel": "Principal",
+    "beta": "Beta",
+    "betaFeature": "Recurso beta",
+    "unreadConversations": "{count, plural, one {# conversa não lida} other {# conversas não lidas}}",
+    "unreadNotifications": "{count, plural, one {# notificação não lida} other {# notificações não lidas}}"
+  },
+  "roles": {
+    "owner": "Proprietário",
+    "admin": "Administrador",
+    "agent": "Agente",
+    "viewer": "Visualizador"
+  },
+  "userMenu": {
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "signOut": "Sair",
+    "openMenu": "Abrir menu da conta",
+    "userFallback": "Usuário",
+    "avatarAlt": "Avatar"
+  },
+  "shell": {
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "modeToggle": {
+    "switchToDark": "Mudar para o modo escuro",
+    "switchToLight": "Mudar para o modo claro"
+  }
+}
