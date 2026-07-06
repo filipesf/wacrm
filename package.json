@@ -37,7 +37,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "i18n:check": "node scripts/i18n-parity.mjs"
+    "i18n:check": "node scripts/i18n-parity.mjs",
+    "seed:demo": "node --env-file-if-exists=.env.local --import tsx scripts/seed-demo.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -73,6 +74,7 @@
     "prettier": "^3.9.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.0",
     "typescript": "^6",
     "vitest": "^4.1.9"
   },
